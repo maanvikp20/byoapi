@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <nav>
+    <div>
+      <button onclick="window.location.href='/'">
+        <img src="/logo.png" alt="Logo" style="height:40px;">
+      </button>
+    </div>
+
+    <div>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+    </div>
+  </nav>
+
+  <div class="banner">
+    <img src="">
+    <h1>The War Thunder Aviation API</h1>
+    <p>Serving less than 1 call each month!</p>
+  </div>
+
+  <div class="banner-bottom">
+    <p>All the War Thunder aircraft data you'll ever need in one place,
+easily accessible through a modern free open-source RESTful API.</p>
+  </div>
+
+  <main>
+    <div class="links">
+      <h2>Try it now!</h2>
+      <style>
+      .api-input-container {
+        display: flex;
+        align-items: center;
+        background: #eee;
+        border-radius: 16px;
+        padding: 4px 8px;
+        max-width: 600px;
+        margin-bottom: 16px;
+      }
+      .api-base {
+        color: #4a90e2;
+        font-size: 1rem;
+        margin-right: 8px;
+        white-space: nowrap;
+      }
+      .api-path-input {
+        border: none;
+        outline: none;
+        font-size: 1rem;
+        flex: 1;
+        background: transparent;
+        padding: 8px 0;
+      }
+      .api-copy-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        margin-right: 8px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+      }
+      .api-copy-btn img {
+        height: 20px;
+        width: 20px;
+      }
+      .api-submit-btn {
+        background: #1976d2;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        padding: 8px 20px;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-left: 8px;
+        transition: background 0.2s;
+      }
+      .api-submit-btn:hover {
+        background: #1565c0;
+      }
+      </style>
+      <form class="api-input-container" onsubmit="event.preventDefault();">
+        <span class="api-base">https://pokeapi.co/api/v2/</span>
+        <input class="api-path-input" type="text" value="pokemon/ditto" aria-label="API Path">
+        <button class="api-copy-btn" type="button" title="Copy">
+          <img src="https://img.icons8.com/material-outlined/24/000000/copy.png" alt="Copy">
+        </button>
+        <button class="api-submit-btn" type="submit">Submit</button>
+      </form>
+
+      <div class="data-display">
+
+      </div>
+    </div>
+
+    <div class="info">
+
+    </div>
+  </main>
+
+  <div class="footer">
+    <p>Created by Maanvik Poddar. War Thunder and vehicles are trademarks of Gaijin Entertainment.</p>
+  </div>
+
+</body>
+</html>
