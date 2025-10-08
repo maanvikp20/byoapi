@@ -1,0 +1,22 @@
+[
+  {
+    "id": "usa",
+    "name": "USA",
+    "vehicles": {
+      "aircraft": 149,
+      "helicopters": 34,
+      "tanks": 187,
+      "ships": 92
+    }
+  },
+  {
+    "id": "ussr",
+    "name": "USSR",
+    "vehicles": {
+      "aircraft": 267,
+      "helicopters": 41,
+      "tanks": 203,
+      "ships": 78
+    }
+  }
+]
