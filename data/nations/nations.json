@@ -4,19 +4,40 @@
     "name": "USA",
     "vehicles": {
       "aircraft": 149,
-      "helicopters": 34,
-      "tanks": 187,
-      "ships": 92
+      "helicopters": 18,
+      "tanks": 127,
+      "ships": 78
+    }
+  },
+  {
+    "id": "germany",
+    "name": "Germany",
+    "vehicles": {
+      "aircraft": 132,
+      "helicopters": 10,
+      "tanks": 135,
+      "ships": 75
     }
   },
   {
     "id": "ussr",
     "name": "USSR",
     "vehicles": {
-      "aircraft": 267,
-      "helicopters": 41,
-      "tanks": 203,
-      "ships": 78
+      "aircraft": 138,
+      "helicopters": 15,
+      "tanks": 153,
+      "ships": 82
+    }
+  },
+
+  {
+    "id": "great_britain",
+    "name": "Great Britain",
+    "vehicles": {
+      "aircraft": 123,
+      "helicopters": 8,
+      "tanks": 109,
+      "ships": 85
     }
   }
 ]
