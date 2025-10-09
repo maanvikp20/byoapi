@@ -1,293 +1,2886 @@
-[
-  {
-    "id": 1,
-    "tankid": "m2a4",
-    "name": "M2A4",
-    "nation": "usa",
-    "type": "light",
-    "tier": 1,
-    "ratings": {
-      "ab_rating": 1.0,
-      "rb_rating": 1.0,
-      "sb_rating": 1.0
-    },
-    "manufacturer": "Rock Island Arsenal",
-    "update": "Update 1.45 'Steel Generals'",
-    "survival_armour": {
-      "armour": {
-        "hull": {
-          "front": 25,
-          "side": 25,
-          "rear": 25
-        },
-        "turret": {
-          "front": 25,
-          "side": 25,
-          "rear": 25
-        }
+{
+  "usa": [
+    {
+      "id": 1,
+      "tankid": "m2a4",
+      "name": "M2A4",
+      "nation": "usa",
+      "type": "light",
+      "tier": 1,
+      "ratings": {
+        "ab_rating": 1.0,
+        "rb_rating": 1.0,
+        "sb_rating": 1.0
       },
-      "visibility": 78,
-      "crew": 4
-    },
-    "mobility": {
-      "max_speed": {
-        "forward": 57,
-        "backward": 7
-      },
-      "power_to_weight_ratio": 22.8,
-      "engine_power": 262,
-      "weight": 11.5
-    },
-    "optics": {
-      "gunner": "1.9 - 3.5x",
-      "commander": "-",
-      "driver": "-"
-    },
-    "armament": {
-      "37_mm_m5_cannon": {
-        "ammunition": 103,
-        "ammo_types": {
-          "m74": {
-            "type": "AP",
-            "shell_stats": {
-              "caliber": 37,
-              "mass": 0.87,
-              "muzzle_velocity": 870
-            },
-            "penetration": {
-              "10m": 77,
-              "100m": 74,
-              "500m": 64,
-              "1000m": 53,
-              "1500m": 44,
-              "2000m": 36
-            }
+      "manufacturer": "Rock Island Arsenal",
+      "update": "Update 1.45 'Steel Generals'",
+      "survival_armour": {
+        "armour": {
+          "hull": {
+            "front": 25,
+            "side": 25,
+            "rear": 25
           },
-          "m51b1": {
-            "type": "APCBC",
-            "shell_stats": {
-              "caliber": 37,
-              "mass": 0.87,
-              "muzzle_velocity": 870
-            },
-            "penetration": {
-              "10m": 86,
-              "100m": 83,
-              "500m": 71,
-              "1000m": 59,
-              "1500m": 49,
-              "2000m": 40
-            }
+          "turret": {
+            "front": 25,
+            "side": 25,
+            "rear": 25
           }
         },
-        "reload": {
-          "base": 3.7,
-          "ace": 2.9
-        },
-        "vertical_guidance": "-10° / +20°",
-        "turret_rotation_speed": {
-          "horizontal": {
-            "base": 14.3,
-            "ace": 20.5
-          },
-          "vertical": {
-            "base": 10.5,
-            "ace": 15
-          }
-        }
+        "visibility": 78,
+        "crew": 4
       },
-      "7.62_mm_M1919A4_machine_gun_coaxial": {
-        "ammunition": 21000,
-        "belt_capacity": 250,
-        "ammo_types": {
-          "default": {
-            "belt_filling": "AP/T",
-            "penetration": {
-              "10m": 13,
-              "100m": 12,
-              "500m": 7,
-              "1000m": 3,
-              "1500m": 2,
-              "2000m": 0
-            }
-          }
-        },
-        "reload": {
-          "base": 10.4,
-          "ace": 8
-        },
-        "fire_rate": 500
-      },
-      "7.62_mm_M1919A4_machine_gun": {
-        "ammunition": 3000,
-        "belt_capacity": 250,
-        "ammo_types": {
-          "default": {
-            "belt_filling": "AP/T",
-            "penetration": {
-              "10m": 13,
-              "100m": 12,
-              "500m": 7,
-              "1000m": 3,
-              "1500m": 2,
-              "2000m": 0
-            }
-          }
-        },
-        "reload": {
-          "base": 10.4,
-          "ace": 8
-        },
-        "fire_rate": 500,
-        "vertical_guidance": "-10° / +45°",
-        "horizontal_guidance": "-90° / +90°",
-        "turret_rotation_speed": {
-          "horizontal": {
-            "base": "63°/s",
-            "ace": "90°/s"
-          },
-          "vertical": {
-            "base": "63°/s",
-            "ace": "90°/s"
-          }
-        }
-      }
-    },
-    "economy": {
-      "repair_cost": {
-        "ab": 0,
-        "rb": 0,
-        "sb": 0
-      },
-      "crew_training": {
-        "cost": 0,
-        "expert": "1000 SL",
-        "ace": "10 GE",
-        "research_aces": "80,000 RP"
-      },
-      "reward_multiplier": {
-        "SL": {
-          "ab": 0.1,
-          "rb": 0.1,
-          "sb": 0.1
-        },
-        "RP": {
-          "rp": 1.0
-        },
-        "total_cost_of_modifications": {
-          "RP": 3730,
-          "SL": 174
-        },
-        "talisman_cost": {
-          "GE": 190
-        }
-      }
-    },
-    "modifications": {
       "mobility": {
-        "tracks": {
-          "research": "330 RP",
-          "cost": {
-            "SL": 15,
-            "GE": 35
+        "max_speed": {
+          "forward": 57,
+          "backward": 7
+        },
+        "power_to_weight_ratio": 22.8,
+        "engine_power": 262,
+        "weight": 11.5
+      },
+      "optics": {
+        "gunner": "1.9 - 3.5x",
+        "commander": "-",
+        "driver": "-"
+      },
+      "armament": {
+        "37_mm_m5_cannon": {
+          "ammunition": 103,
+          "ammo_types": {
+            "m74": {
+              "type": "AP",
+              "shell_stats": {
+                "caliber": 37,
+                "mass": 0.87,
+                "muzzle_velocity": 870
+              },
+              "penetration": {
+                "10m": 77,
+                "100m": 74,
+                "500m": 64,
+                "1000m": 53,
+                "1500m": 44,
+                "2000m": 36
+              }
+            },
+            "m51b1": {
+              "type": "APCBC",
+              "shell_stats": {
+                "caliber": 37,
+                "mass": 0.87,
+                "muzzle_velocity": 870
+              },
+              "penetration": {
+                "10m": 86,
+                "100m": 83,
+                "500m": 71,
+                "1000m": 59,
+                "1500m": 49,
+                "2000m": 40
+              }
+            }
+          },
+          "reload": {
+            "base": 3.7,
+            "ace": 2.9
+          },
+          "vertical_guidance": "-10° / +20°",
+          "turret_rotation_speed": {
+            "horizontal": {
+              "base": "14.3°/s ",
+              "ace": "20.5°/s"
+            },
+            "vertical": {
+              "base": "10.5°/s",
+              "ace": "15°/s"
+            }
           }
         },
-        "suspension": {
-          "research": "0 RP",
-          "cost": {
-            "SL": 0,
-            "GE": 0
-          }
+        "7.62_mm_M1919A4_machine_gun_coaxial": {
+          "ammunition": 21000,
+          "belt_capacity": 250,
+          "ammo_types": {
+            "default": {
+              "belt_filling": "AP/T",
+              "penetration": {
+                "10m": 13,
+                "100m": 12,
+                "500m": 7,
+                "1000m": 3,
+                "1500m": 2,
+                "2000m": 0
+              }
+            }
+          },
+          "reload": {
+            "base": 10.4,
+            "ace": 8
+          },
+          "fire_rate": 500
         },
-        "brake_system": {
-          "research": "380 RP",
-          "cost": {
-            "SL": 17,
-            "GE": 40
-          }
-        },
-        "filters": {
-          "research": "0 RP",
-          "cost": {
-            "SL": 0,
-            "GE": 0
-          }
-        },
-        "transmission": {
-          "research": "0 RP",
-          "cost": {
-            "SL": 0,
-            "GE": 0
-          }
-        },
-        "engine": {
-          "research": "720 RP",
-          "cost": {
-            "SL": 35,
-            "GE": 75
+        "7.62_mm_M1919A4_machine_gun": {
+          "ammunition": 3000,
+          "belt_capacity": 250,
+          "ammo_types": {
+            "default": {
+              "belt_filling": "AP/T",
+              "penetration": {
+                "10m": 13,
+                "100m": 12,
+                "500m": 7,
+                "1000m": 3,
+                "1500m": 2,
+                "2000m": 0
+              }
+            }
+          },
+          "reload": {
+            "base": 10.4,
+            "ace": 8
+          },
+          "fire_rate": 500,
+          "vertical_guidance": "-10° / +45°",
+          "horizontal_guidance": "-90° / +90°",
+          "turret_rotation_speed": {
+            "horizontal": {
+              "base": "63°/s",
+              "ace": "90°/s"
+            },
+            "vertical": {
+              "base": "63°/s",
+              "ace": "90°/s"
+            }
           }
         }
       },
-      "protection": {
-        "improved_parts": {
-          "research": "0 RP",
-          "cost": {
-            "SL": 0,
-            "GE": 0
+      "economy": {
+        "repair_cost": {
+          "ab": 0,
+          "rb": 0,
+          "sb": 0
+        },
+        "crew_training": {
+          "cost": 0,
+          "expert": "1000 SL",
+          "ace": "10 GE",
+          "research_aces": "80,000 RP"
+        },
+        "reward_multiplier": {
+          "SL": {
+            "ab": 0.1,
+            "rb": 0.1,
+            "sb": 0.1
+          },
+          "RP": {
+            "rp": 1.0
+          },
+          "total_cost_of_modifications": {
+            "RP": 3730,
+            "SL": 174
+          },
+          "talisman_cost": {
+            "GE": 190
+          }
+        }
+      },
+      "modifications": {
+        "mobility": {
+          "tracks": {
+            "research": "330 RP",
+            "cost": {
+              "SL": 15,
+              "GE": 35
+            }
+          },
+          "suspension": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          },
+          "brake_system": {
+            "research": "380 RP",
+            "cost": {
+              "SL": 17,
+              "GE": 40
+            }
+          },
+          "filters": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          },
+          "transmission": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          },
+          "engine": {
+            "research": "720 RP",
+            "cost": {
+              "SL": 35,
+              "GE": 75
+            }
           }
         },
-        "improved_fpe": {
-          "research": "0 RP",
-          "cost": {
-            "SL": 0,
-            "GE": 0
+        "protection": {
+          "improved_parts": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          },
+          "improved_fpe": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          },
+          "crew_replenishment": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
           }
         },
-        "crew_replenishment": {
-          "research": "0 RP",
-          "cost": {
-            "SL": 0,
+        "firepower": {
+          "horizontal_drive": {
+            "research": "330 RP",
+            "cost": {
+              "SL": 15,
+              "GE": 35
+            }
+          },
+          "adjustment_of_fire": {
+            "research": "330 RP",
+            "cost": {
+              "SL": 15,
+              "GE": 35
+            }
+          },
+          "elevation_mechanism": {
+            "research": "540 RP",
+            "cost": {
+              "SL": 25,
+              "GE": 60
+            }
+          },
+          "artillery_support": {
+            "research": "720 RP",
+            "cost": {
+              "SL": 35,
+              "GE": 75
+            }
+          },
+          "m51b1_shot": {
+            "research": "330 RP",
+            "cost": {
+              "SL": 15,
+              "GE": 35
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 2,
+      "tankid": "m2",
+      "name": "M2",
+      "nation": "usa",
+      "type": "medium",
+      "tier": 1,
+      "ratings": {
+        "ab_rating": 1.3,
+        "rb_rating": 1.3,
+        "sb_rating": 1.3
+      },
+      "manufacturer": "Rock Island Arsenal",
+      "update": "Update 1.45 'Steel Generals'",
+      "survival_armour": {
+        "armour": {
+          "hull": {
+            "front": 28,
+            "side": 25,
+            "rear": 25
+          },
+          "turret": {
+            "front": 25,
+            "side": 25,
+            "rear": 25
+          }
+        },
+        "visibility": 110,
+        "crew": 6
+      },
+      "mobility": {
+        "max_speed": {
+          "forward": 54,
+          "backward": 7
+        },
+        "power_to_weight_ratio": 20.3,
+        "engine_power": 350,
+        "weight": 17.2
+      },
+      "optics": {
+        "gunner": "1.9 - 3.5x",
+        "commander": "-",
+        "driver": "-"
+      },
+      "armament": {
+        "37_mm_m3_cannon": {
+          "ammunition": 200,
+          "ammo_types": {
+            "m74": {
+              "type": "AP",
+              "shell_stats": {
+                "caliber": 37,
+                "mass": 0.87,
+                "muzzle_velocity": 883
+              },
+              "penetration": {
+                "10m": 79,
+                "100m": 76,
+                "500m": 65,
+                "1000m": 54,
+                "1500m": 45,
+                "2000m": 37
+              }
+            },
+            "m51b1": {
+              "type": "APCBC",
+              "shell_stats": {
+                "caliber": 37,
+                "mass": 0.87,
+                "muzzle_velocity": 883
+              },
+              "penetration": {
+                "10m": 87,
+                "100m": 84,
+                "500m": 73,
+                "1000m": 60,
+                "1500m": 50,
+                "2000m": 41
+              }
+            }
+          },
+          "reload": {
+            "base": 3.7,
+            "ace": 2.9
+          },
+          "vertical_guidance": "-10° / +25°",
+          "turret_rotation_speed": {
+            "horizontal": {
+              "base": "3.8°/s",
+              "ace": "5.5°/s"
+            },
+            "vertical": {
+              "base": "2.8°/s",
+              "ace": "4°/s"
+            }
+          }
+        },
+        "7.62_mm_M1919A4_machine_gun": {
+          "ammunition": 15000,
+          "belt_capacity": 250,
+          "ammo_types": {
+            "default": {
+              "belt_filling": "AP/T",
+              "penetration": {
+                "10m": 13,
+                "100m": 12,
+                "500m": 7,
+                "1000m": 3,
+                "1500m": 2,
+                "2000m": 0
+              }
+            }
+          },
+          "reload": {
+            "base": 10.4,
+            "ace": 8
+          },
+          "fire_rate": 500
+        },
+        "7.62_mm_M1919A4_machine_gun_coaxial": {
+          "ammunition": 6000,
+          "belt_capacity": 250,
+          "ammo_types": {
+            "default": {
+              "belt_filling": "AP/T",
+              "penetration": {
+                "10m": 13,
+                "100m": 12,
+                "500m": 7,
+                "1000m": 3,
+                "1500m": 2,
+                "2000m": 0
+              }
+            }
+          },
+          "reload": {
+            "base": 10.4,
+            "ace": 8
+          },
+          "fire_rate": 500
+        }
+      },
+      "economy": {
+        "repair_cost": {
+          "ab": 132,
+          "rb": 110,
+          "sb": 120
+        },
+        "crew_training": {
+          "cost": 200,
+          "expert": "1000 SL",
+          "ace": "20 GE",
+          "research_aces": "96,000 RP"
+        },
+        "reward_multiplier": {
+          "SL": {
+            "ab": 0.1,
+            "rb": 0.1,
+            "sb": 0.2
+          },
+          "RP": {
+            "rp": 1.0
+          },
+          "total_cost_of_modifications": {
+            "RP": 2970,
+            "SL": 890
+          },
+          "talisman_cost": {
+            "GE": 190
+          }
+        }
+      },
+      "modifications": {
+        "mobility": {
+          "tracks": {
+            "research": "150 RP",
+            "cost": {
+              "SL": 45,
+              "GE": 40
+            }
+          },
+          "suspension": {
+            "research": "165 RP",
+            "cost": {
+              "SL": 50,
+              "GE": 45
+            }
+          },
+          "brake_system": {
+            "research": "165 RP",
+            "cost": {
+              "SL": 50,
+              "GE": 45
+            }
+          },
+          "filters": {
+            "research": "250 RP",
+            "cost": {
+              "SL": 75,
+              "GE": 70
+            }
+          },
+          "transmission": {
+            "research": "320 RP",
+            "cost": {
+              "SL": 95,
+              "GE": 85
+            }
+          },
+          "engine": {
+            "research": "320 RP",
+            "cost": {
+              "SL": 95,
+              "GE": 85
+            }
+          }
+        },
+        "protection": {
+          "improved_parts": {
+            "research": "150 RP",
+            "cost": {
+              "SL": 45,
+              "GE": 40
+            }
+          },
+          "improved_fpe": {
+            "research": "165 RP",
+            "cost": {
+              "SL": 50,
+              "GE": 45
+            }
+          },
+          "crew_replenishment": {
+            "research": "250 RP",
+            "cost": {
+              "SL": 75,
+              "GE": 70
+            }
+          }
+        },
+        "firepower": {
+          "horizontal_drive": {
+            "research": "150 RP",
+            "cost": {
+              "SL": 45,
+              "GE": 40
+            }
+          },
+          "adjustment_of_fire": {
+            "research": "165 RP",
+            "cost": {
+              "SL": 50,
+              "GE": 45
+            }
+          },
+          "elevation_mechanism": {
+            "research": "250 RP",
+            "cost": {
+              "SL": 75,
+              "GE": 70
+            }
+          },
+          "artillery_support": {
+            "research": "320 RP",
+            "cost": {
+              "SL": 95,
+              "GE": 85
+            }
+          },
+          "m51b1_shot": {
+            "research": "150 RP",
+            "cost": {
+              "SL": 45,
+              "GE": 40
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 3,
+      "tankid": "lvta1",
+      "name": "LVT(A)(1)",
+      "nation": "usa",
+      "type": "light",
+      "tier": 1,
+      "ratings": {
+        "ab_rating": 1.0,
+        "rb_rating": 1.0,
+        "sb_rating": 1.0
+      },
+      "manufacturer": "FMC",
+      "update": "Update 1.59 'Flaming Arrows'",
+      "survival_armour": {
+        "armour": {
+          "hull": {
+            "front": 12,
+            "side": 6,
+            "rear": 6
+          },
+          "turret": {
+            "front": 50,
+            "side": 12,
+            "rear": 12
+          }
+        },
+        "visibility": 132,
+        "crew": 6
+      },
+      "mobility": {
+        "max_speed": {
+          "forward": 40,
+          "backward": 5
+        },
+        "power_to_weight_ratio": 16.8,
+        "engine_power": 250,
+        "weight": 14.9
+      },
+      "optics": {
+        "gunner": "1.9 - 3.5x",
+        "commander": "-",
+        "driver": "-"
+      },
+      "armament": {
+        "37_mm_m6_cannon": {
+          "ammunition": 104,
+          "ammo_types": {
+            "m74b1": {
+              "type": "AP",
+              "shell_stats": {
+                "caliber": 37,
+                "mass": 0.87,
+                "muzzle_velocity": 883
+              },
+              "penetration": {
+                "10m": 79,
+                "100m": 76,
+                "500m": 65,
+                "1000m": 54,
+                "1500m": 45,
+                "2000m": 37
+              }
+            },
+            "m51b1": {
+              "type": "APCBC",
+              "shell_stats": {
+                "caliber": 37,
+                "mass": 0.87,
+                "muzzle_velocity": 883
+              },
+              "penetration": {
+                "10m": 87,
+                "100m": 84,
+                "500m": 73,
+                "1000m": 60,
+                "1500m": 50,
+                "2000m": 41
+              }
+            }
+          },
+          "reload": {
+            "base": 3.7,
+            "ace": 2.9
+          },
+          "vertical_guidance": "-10° / +25°",
+          "turret_rotation_speed": {
+            "horizontal": {
+              "base": "16.8°/s ",
+              "ace": "24°/s"
+            },
+            "vertical": {
+              "base": "2.8°/s",
+              "ace": "4°/s"
+            }
+          }
+        },
+        "7.62_mm_M1919A4_machine_gun": {
+          "ammunition": 6000,
+          "belt_capacity": 250,
+          "ammo_types": {
+            "default": {
+              "belt_filling": "AP/T",
+              "penetration": {
+                "10m": 13,
+                "100m": 12,
+                "500m": 7,
+                "1000m": 3,
+                "1500m": 2,
+                "2000m": 0
+              }
+            }
+          },
+          "reload": {
+            "base": 10.4,
+            "ace": 8
+          },
+          "fire_rate": 500,
+          "vertical_guidance": "-10° / +40°",
+          "horizontal_guidance": "-60° / +60°",
+          "turret_rotation_speed": {
+            "horizontal": {
+              "base": "63°/s",
+              "ace": "90°/s"
+            },
+            "vertical": {
+              "base": "63°/s",
+              "ace": "90°/s"
+            }
+          }
+        },
+        "7.62_mm_M1919A4_machine_gun_coaxial": {
+          "ammunition": 3000,
+          "belt_capacity": 250,
+          "ammo_types": {
+            "default": {
+              "belt_filling": "AP/T",
+              "penetration": {
+                "10m": 13,
+                "100m": 12,
+                "500m": 7,
+                "1000m": 3,
+                "1500m": 2,
+                "2000m": 0
+              }
+            }
+          },
+          "reload": {
+            "base": 10.4,
+            "ace": 8
+          },
+          "fire_rate": 500
+        }
+      },
+      "economy": {
+        "repair_cost": {
+          "ab": 0,
+          "rb": 0,
+          "sb": 0
+        },
+        "crew_training": {
+          "cost": 0,
+          "expert": "1000 SL",
+          "ace": "10 GE",
+          "research_aces": "80,000 RP"
+        },
+        "reward_multiplier": {
+          "SL": {
+            "ab": 0.1,
+            "rb": 0.1,
+            "sb": 0.1
+          },
+          "RP": {
+            "rp": 1.0
+          },
+          "total_cost_of_modifications": {
+            "RP": 3730,
+            "SL": 174
+          },
+          "talisman_cost": {
+            "GE": 190
+          }
+        }
+      },
+      "modifications": {
+        "mobility": {
+          "tracks": {
+            "research": "330 RP",
+            "cost": {
+              "SL": 15,
+              "GE": 35
+            }
+          },
+          "suspension": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          },
+          "brake_system": {
+            "research": "380 RP",
+            "cost": {
+              "SL": 17,
+              "GE": 40
+            }
+          },
+          "filters": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          },
+          "transmission": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          },
+          "engine": {
+            "research": "720 RP",
+            "cost": {
+              "SL": 35,
+              "GE": 75
+            }
+          }
+        },
+        "protection": {
+          "improved_parts": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          },
+          "improved_fpe": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          },
+          "crew_replenishment": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          }
+        },
+        "firepower": {
+          "horizontal_drive": {
+            "research": "330 RP",
+            "cost": {
+              "SL": 15,
+              "GE": 35
+            }
+          },
+          "adjustment_of_fire": {
+            "research": "380 RP",
+            "cost": {
+              "SL": 17,
+              "GE": 40
+            }
+          },
+          "elevation_mechanism": {
+            "research": "540 RP",
+            "cost": {
+              "SL": 25,
+              "GE": 60
+            }
+          },
+          "artillery_support": {
+            "research": "720 RP",
+            "cost": {
+              "SL": 35,
+              "GE": 75
+            }
+          },
+          "m51b1_shot": {
+            "research": "330 RP",
+            "cost": {
+              "SL": 15,
+              "GE": 35
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 4,
+      "tankid": "m13mgmc",
+      "name": "M13 MGMC",
+      "nation": "usa",
+      "type": "light",
+      "tier": 1,
+      "ratings": {
+        "ab_rating": 1.3,
+        "rb_rating": 1.7,
+        "sb_rating": 1.7
+      },
+      "manufacturer": "White Motor Company",
+      "update": "Update 1.45 'Steel Generals'",
+      "survival_armour": {
+        "armour": {
+          "hull": {
+            "front": 6,
+            "side": 6,
+            "rear": 6
+          },
+          "turret": {
+            "front": 12,
+            "side": 6,
+            "rear": 6
+          }
+        },
+        "visibility": 74,
+        "crew": 3
+      },
+      "mobility": {
+        "max_speed": {
+          "forward": 76,
+          "backward": 17
+        },
+        "power_to_weight_ratio": 17.8,
+        "engine_power": 148,
+        "weight": 8.3
+      },
+      "optics": {
+        "gunner": "1.9 - 3.5x",
+        "commander": "-",
+        "driver": "-"
+      },
+      "armament": {
+        "12.7_mm_M2HB_machine_gun": {
+          "ammunition": 4800,
+          "belt_capacity": 200,
+          "ammo_types": {
+            "universal": {
+              "belt_filling": "API-T, I, AP, API-T",
+              "penetration": {
+                "10m": 31,
+                "100m": 29,
+                "500m": 21,
+                "1000m": 14,
+                "1500m": 9,
+                "2000m": 6
+              }
+            },
+            ".50_api": {
+              "belt_filling": "API-T, AP-I, API-T",
+              "penetration": {
+                "10m": 30,
+                "100m": 27,
+                "500m": 19,
+                "1000m": 12,
+                "1500m": 8,
+                "2000m": 5
+              }
+            },
+            ".50_ap": {
+              "belt_filling": "AP, AP, API-T",
+              "penetration": {
+                "10m": 31,
+                "100m": 29,
+                "500m": 21,
+                "1000m": 14,
+                "1500m": 9,
+                "2000m": 6
+              }
+            },
+            ".50_api-t": {
+              "belt_filling": "API-T",
+              "penetration": {
+                "10m": 29,
+                "100m": 27,
+                "500m": 19,
+                "1000m": 12,
+                "1500m": 7,
+                "2000m": 5
+              }
+            }
+          },
+          "reload": {
+            "base": 10.4,
+            "ace": 8
+          },
+          "fire_rate": 575,
+          "vertical_guidance": "-10° / +90°",
+          "horizontal_guidance": "-60° / +60°",
+          "turret_rotation_speed": {
+            "horizontal": {
+              "base": "42°/s",
+              "ace": "60°/s"
+            },
+            "vertical": {
+              "base": "42°/s",
+              "ace": "60°/s"
+            }
+          }
+        }
+      },
+      "economy": {
+        "repair_cost": {
+          "ab": 102,
+          "rb": 91,
+          "sb": 140
+        },
+        "crew_training": {
+          "cost": 200,
+          "expert": "1000 SL",
+          "ace": "20 GE",
+          "research_aces": "96,000 RP"
+        },
+        "reward_multiplier": {
+          "SL": {
+            "ab": 0.1,
+            "rb": 0.1,
+            "sb": 0.2
+          },
+          "RP": {
+            "rp": 1.0
+          },
+          "total_cost_of_modifications": {
+            "RP": 2975,
+            "SL": 885
+          },
+          "talisman_cost": {
+            "GE": 190
+          }
+        }
+      },
+      "modifications": {
+        "mobility": {
+          "tracks": {
+            "research": "150 RP",
+            "cost": {
+              "SL": 45,
+              "GE": 45
+            }
+          },
+          "suspension": {
+            "research": "135 RP",
+            "cost": {
+              "SL": 40,
+              "GE": 40
+            }
+          },
+          "brake_system": {
+            "research": "135 RP",
+            "cost": {
+              "SL": 40,
+              "GE": 40
+            }
+          },
+          "filters": {
+            "research": "185 RP",
+            "cost": {
+              "SL": 55,
+              "GE": 55
+            }
+          },
+          "transmission": {
+            "research": "320 RP",
+            "cost": {
+              "SL": 95,
+              "GE": 100
+            }
+          },
+          "engine": {
+            "research": "320 RP",
+            "cost": {
+              "SL": 95,
+              "GE": 100
+            }
+          }
+        },
+        "protection": {
+          "improved_parts": {
+            "research": "150 RP",
+            "cost": {
+              "SL": 45,
+              "GE": 45
+            }
+          },
+          "improved_fpe": {
+            "research": "135 RP",
+            "cost": {
+              "SL": 40,
+              "GE": 40
+            }
+          },
+          "crew_replenishment": {
+            "research": "185 RP",
+            "cost": {
+              "SL": 55,
+              "GE": 55
+            }
+          }
+        },
+        "firepower": {
+          ".50_api":{
+            "research": "150 RP",
+            "cost": {
+              "SL": 45,
+              "GE": 45
+            }
+          },
+          ".50_ap":{
+            "research": "135 RP",
+            "cost": {
+              "SL": 40,
+              "GE": 40
+            }
+          },
+          ".50_api-t":{
+            "research": "185 RP",
+            "cost": {
+              "SL": 55,
+              "GE": 55
+            }
+          },
+          "artillery_support": {
+            "research": "320 RP",
+            "cost": {
+              "SL": 95,
+              "GE": 100
+            }
+          },
+          "horizontal_drive": {
+            "research": "150 RP",
+            "cost": {
+              "SL": 45,
+              "GE": 45
+            }
+          },
+          "adjustment_of_fire": {
+            "research": "135 RP",
+            "cost": {
+              "SL": 40,
+              "GE": 40
+            }
+          },
+          "elevation_mechanism": {
+            "research": "185 RP",
+            "cost": {
+              "SL": 55,
+              "GE": 55
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 5,
+      "tankid": "m2a2",
+      "name": "M2A2",
+      "nation": "usa",
+      "type": "light",
+      "tier": 1,
+      "ratings": {
+        "ab_rating": 1.0,
+        "rb_rating": 1.0,
+        "sb_rating": 1.0
+      },
+      "manufacturer": "Rock Island Arsenal",
+      "update": "Update 1.49 'Weapons of Victory'",
+      "survival_armour": {
+        "armour": {
+          "hull": {
+            "front": 12,
+            "side": 6,
+            "rear": 6
+          },
+          "turret": {
+            "front": 15,
+            "side": 15,
+            "rear": 15
+          }
+        },
+        "visibility": 78,
+        "crew": 4
+      },
+      "mobility": {
+        "max_speed": {
+          "forward": 72,
+          "backward": 9
+        },
+        "power_to_weight_ratio": 30.5,
+        "engine_power": 262,
+        "weight": 8.6
+      },
+      "optics": {
+        "gunner": "1.9 - 3.5x",
+        "commander": "-",
+        "driver": "-"
+      },
+      "armament": {
+        "12.7_mm_M2HB_machine_gun": {
+          "ammunition": 1400,
+          "belt_capacity": 200,
+          "ammo_types": {
+            "universal": {
+              "belt_filling": "API-T, I, AP, API-T",
+              "penetration": {
+                "10m": 31,
+                "100m": 29,
+                "500m": 21,
+                "1000m": 14,
+                "1500m": 9,
+                "2000m": 6
+              }
+            },
+            ".50_api": {
+              "belt_filling": "API-T, AP-I, API-T",
+              "penetration": {
+                "10m": 30,
+                "100m": 27,
+                "500m": 19,
+                "1000m": 12,
+                "1500m": 8,
+                "2000m": 5
+              }
+            },
+            ".50_ap": {
+              "belt_filling": "AP, AP, API-T",
+              "penetration": {
+                "10m": 31,
+                "100m": 29,
+                "500m": 21,
+                "1000m": 14,
+                "1500m": 9,
+                "2000m": 6
+              }
+            },
+            ".50_api-t": {
+              "belt_filling": "API-T",
+              "penetration": {
+                "10m": 29,
+                "100m": 27,
+                "500m": 19,
+                "1000m": 12,
+                "1500m": 7,
+                "2000m": 5
+              }
+            }
+          },
+          "reload": {
+            "base": 10.4,
+            "ace": 8
+          },
+          "fire_rate": 575,
+          "vertical_guidance": "-10° / +20°",
+          "horizontal_guidance": "-170° / +20°",
+          "turret_rotation_speed": {
+            "horizontal": {
+              "base": "10.5°/s",
+              "ace": "15°/s"
+            },
+            "vertical": {
+              "base": "10.5°/s",
+              "ace": "15°/s"
+            }
+          }
+        },
+        "7.62_mm_M1919A4_machine_gun": {
+          "ammunition": 19000,
+          "belt_capacity": 250,
+          "ammo_types": {
+            "default": {
+              "belt_filling": "AP/T",
+              "penetration": {
+                "10m": 13,
+                "100m": 12,
+                "500m": 7,
+                "1000m": 3,
+                "1500m": 2,
+                "2000m": 0
+              }
+            }
+          },
+          "reload": {
+            "base": 10.4,
+            "ace": 8
+          },
+          "fire_rate": 500,
+          "vertical_guidance": "-10° / +20°",
+          "horizontal_guidance": "-5° / +160°",
+          "turret_rotation_speed": {
+            "horizontal": {
+              "base": "17.5°/s",
+              "ace": "25°/s"
+            },
+            "vertical": {
+              "base": "10.5°/s",
+              "ace": "15°/s"
+            }
+          }
+        }
+      },
+      "economy": {
+        "repair_cost": {
+          "ab": 106,
+          "rb": 95,
+          "sb": 111
+        },
+        "crew_training": {
+          "cost": 200,
+          "expert": "1000 SL",
+          "ace": "20 GE",
+          "research_aces": "96,000 RP"
+        },
+        "reward_multiplier": {
+          "SL": {
+            "ab": 0.1,
+            "rb": 0.1,
+            "sb": 0.2
+          },
+          "RP": {
+            "rp": 1.0
+          },
+          "total_cost_of_modifications": {
+            "RP": 2975,
+            "SL": 885
+          },
+          "talisman_cost": {
+            "GE": 190
+          }
+        }
+      },
+      "modifications": {
+        "mobility": {
+          "tracks": {
+            "research": "150 RP",
+            "cost": {
+              "SL": 45,
+              "GE": 45
+            }
+          },
+          "suspension": {
+            "research": "135 RP",
+            "cost": {
+              "SL": 40,
+              "GE": 40
+            }
+          },
+          "brake_system": {
+            "research": "135 RP",
+            "cost": {
+              "SL": 40,
+              "GE": 40
+            }
+          },
+          "filters": {
+            "research": "185 RP",
+            "cost": {
+              "SL": 55,
+              "GE": 55
+            }
+          },
+          "transmission": {
+            "research": "320 RP",
+            "cost": {
+              "SL": 95,
+              "GE": 100
+            }
+          },
+          "engine": {
+            "research": "320 RP",
+            "cost": {
+              "SL": 95,
+              "GE": 100
+            }
+          }
+        },
+        "protection": {
+          "improved_parts": {
+            "research": "150 RP",
+            "cost": {
+              "SL": 45,
+              "GE": 45
+            }
+          },
+          "improved_fpe": {
+            "research": "150 RP",
+            "cost": {
+              "SL": 45,
+              "GE": 45
+            }
+          },
+          "crew_replenishment": {
+            "research": "185 RP",
+            "cost": {
+              "SL": 55,
+              "GE": 55
+            }
+          }
+        },
+        "firepower": {
+          ".50_api":{
+            "research": "150 RP",
+            "cost": {
+              "SL": 45,
+              "GE": 45
+            }
+          },
+          ".50_ap":{
+            "research": "135 RP",
+            "cost": {
+              "SL": 40,
+              "GE": 40
+            }
+          },
+          ".50_api-t":{
+            "research": "185 RP",
+            "cost": {
+              "SL": 55,
+              "GE": 55
+            }
+          },
+          "artillery_support": {
+            "research": "320 RP",
+            "cost": {
+              "SL": 95,
+              "GE": 100
+            }
+          },
+          "horizontal_drive": {
+            "research": "150 RP",
+            "cost": {
+              "SL": 45,
+              "GE": 45
+            }
+          },
+          "adjustment_of_fire": {
+            "research": "135 RP",
+            "cost": {
+              "SL": 40,
+              "GE": 40
+            }
+          },
+          "elevation_mechanism": {
+            "research": "185 RP",
+            "cost": {
+              "SL": 55,
+              "GE": 55
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 6,
+      "tankid": "m2a41starmdiv",
+      "name": "M2A4 (1st Arm.Div.)",
+      "nation": "usa",
+      "type": "light",
+      "tier": 1,
+      "ratings": {
+        "ab_rating": 1.0,
+        "rb_rating": 1.0,
+        "sb_rating": 1.0
+      },
+      "manufacturer": "Rock Island Arsenal",
+      "update": "Update 1.45 'Steel Generals'",
+      "survival_armour": {
+        "armour": {
+          "hull": {
+            "front": 25,
+            "side": 25,
+            "rear": 25
+          },
+          "turret": {
+            "front": 25,
+            "side": 25,
+            "rear": 25
+          }
+        },
+        "visibility": 78,
+        "crew": 4
+      },
+      "mobility": {
+        "max_speed": {
+          "forward": 57,
+          "backward": 7
+        },
+        "power_to_weight_ratio": 22.8,
+        "engine_power": 262,
+        "weight": 11.5
+      },
+      "optics": {
+        "gunner": "1.9 - 3.5x",
+        "commander": "-",
+        "driver": "-"
+      },
+      "armament": {
+        "37_mm_m5_cannon": {
+          "ammunition": 103,
+          "ammo_types": {
+            "m74": {
+              "type": "AP",
+              "shell_stats": {
+                "caliber": 37,
+                "mass": 0.87,
+                "muzzle_velocity": 870
+              },
+              "penetration": {
+                "10m": 77,
+                "100m": 74,
+                "500m": 64,
+                "1000m": 53,
+                "1500m": 44,
+                "2000m": 36
+              }
+            },
+            "m51b1": {
+              "type": "APCBC",
+              "shell_stats": {
+                "caliber": 37,
+                "mass": 0.87,
+                "muzzle_velocity": 870
+              },
+              "penetration": {
+                "10m": 86,
+                "100m": 83,
+                "500m": 71,
+                "1000m": 59,
+                "1500m": 49,
+                "2000m": 40
+              }
+            }
+          },
+          "reload": {
+            "base": 3.7,
+            "ace": 2.9
+          },
+          "vertical_guidance": "-10° / +20°",
+          "turret_rotation_speed": {
+            "horizontal": {
+              "base": "14.3°/s ",
+              "ace": "20.5°/s"
+            },
+            "vertical": {
+              "base": "10.5°/s",
+              "ace": "15°/s"
+            }
+          }
+        },
+        "7.62_mm_M1919A4_machine_gun_coaxial": {
+          "ammunition": 21000,
+          "belt_capacity": 250,
+          "ammo_types": {
+            "default": {
+              "belt_filling": "AP/T",
+              "penetration": {
+                "10m": 13,
+                "100m": 12,
+                "500m": 7,
+                "1000m": 3,
+                "1500m": 2,
+                "2000m": 0
+              }
+            }
+          },
+          "reload": {
+            "base": 10.4,
+            "ace": 8
+          },
+          "fire_rate": 500
+        },
+        "7.62_mm_M1919A4_machine_gun": {
+          "ammunition": 3000,
+          "belt_capacity": 250,
+          "ammo_types": {
+            "default": {
+              "belt_filling": "AP/T",
+              "penetration": {
+                "10m": 13,
+                "100m": 12,
+                "500m": 7,
+                "1000m": 3,
+                "1500m": 2,
+                "2000m": 0
+              }
+            }
+          },
+          "reload": {
+            "base": 10.4,
+            "ace": 8
+          },
+          "fire_rate": 500,
+          "vertical_guidance": "-10° / +45°",
+          "horizontal_guidance": "-90° / +90°",
+          "turret_rotation_speed": {
+            "horizontal": {
+              "base": "63°/s",
+              "ace": "90°/s"
+            },
+            "vertical": {
+              "base": "63°/s",
+              "ace": "90°/s"
+            }
+          }
+        }
+      },
+      "economy": {
+        "repair_cost": {
+          "ab": 322,
+          "rb": 172,
+          "sb": 91
+        },
+        "crew_training": {
+          "cost": 150,
+          "expert": "1000 SL",
+          "ace": "20 GE",
+          "research_aces": "145,000 RP"
+        },
+        "reward_multiplier": {
+          "SL": {
+            "ab": 0.15,
+            "rb": 0.15,
+            "sb": 0.15
+          },
+          "RP": {
+            "rp": 0.75
+          },
+          "total_cost_of_modifications": {
+            "RP": 5020,
+            "SL": 500
+          },
+          "talisman_cost": {
             "GE": 0
           }
         }
       },
-      "firepower": {
-        "horizontal_drive": {
-          "research": "330 RP",
-          "cost": {
-            "SL": 15,
-            "GE": 35
+      "modifications": {
+        "mobility": {
+          "tracks": {
+            "research": "450 RP",
+            "cost": {
+              "SL": 45,
+              "GE": 40
+            }
+          },
+          "suspension": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          },
+          "brake_system": {
+            "research": "500 RP",
+            "cost": {
+              "SL": 50,
+              "GE": 45
+            }
+          },
+          "filters": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          },
+          "transmission": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          },
+          "engine": {
+            "research": "960 RP",
+            "cost": {
+              "SL": 95,
+              "GE": 85
+            }
           }
         },
-        "adjustment_of_drive": {
-          "research": "330 RP",
-          "cost": {
-            "SL": 15,
-            "GE": 35
+        "protection": {
+          "improved_parts": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          },
+          "improved_fpe": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          },
+          "crew_replenishment": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
           }
         },
-        "elevation_mechanism": {
-          "research": "540 RP",
-          "cost": {
-            "SL": 25,
-            "GE": 60
+        "firepower": {
+          "horizontal_drive": {
+            "research": "450 RP",
+            "cost": {
+              "SL": 45,
+              "GE": 40
+            }
+          },
+          "adjustment_of_fire": {
+            "research": "500 RP",
+            "cost": {
+              "SL": 50,
+              "GE": 45
+            }
+          },
+          "elevation_mechanism": {
+            "research": "750 RP",
+            "cost": {
+              "SL": 75,
+              "GE": 70
+            }
+          },
+          "artillery_support": {
+            "research": "960 RP",
+            "cost": {
+              "SL": 95,
+              "GE": 85
+            }
+          },
+          "m51b1_shot": {
+            "research": "450 RP",
+            "cost": {
+              "SL": 45,
+              "GE": 40
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 7,
+      "tankid": "skulllvta1",
+      "name": "Skull LVT(A)(1)",
+      "nation": "usa",
+      "type": "light",
+      "tier": 1,
+      "ratings": {
+        "ab_rating": 1.0,
+        "rb_rating": 1.0,
+        "sb_rating": 1.0
+      },
+      "manufacturer": "FMC",
+      "update": "Update 2.25 'Sky Guardians'",
+      "survival_armour": {
+        "armour": {
+          "hull": {
+            "front": 12,
+            "side": 6,
+            "rear": 6
+          },
+          "turret": {
+            "front": 50,
+            "side": 12,
+            "rear": 12
           }
         },
-        "artillery_support": {
-          "research": "720 RP",
-          "cost": {
-            "SL": 35,
-            "GE": 75
+        "visibility": 132,
+        "crew": 6
+      },
+      "mobility": {
+        "max_speed": {
+          "forward": 40,
+          "backward": 5
+        },
+        "power_to_weight_ratio": 16.8,
+        "engine_power": 250,
+        "weight": 14.9
+      },
+      "optics": {
+        "gunner": "1.9 - 3.5x",
+        "commander": "-",
+        "driver": "-"
+      },
+      "armament": {
+        "37_mm_m6_cannon": {
+          "ammunition": 104,
+          "ammo_types": {
+            "m74b1": {
+              "type": "AP",
+              "shell_stats": {
+                "caliber": 37,
+                "mass": 0.87,
+                "muzzle_velocity": 883
+              },
+              "penetration": {
+                "10m": 79,
+                "100m": 76,
+                "500m": 65,
+                "1000m": 54,
+                "1500m": 45,
+                "2000m": 37
+              }
+            },
+            "m51b1": {
+              "type": "APCBC",
+              "shell_stats": {
+                "caliber": 37,
+                "mass": 0.87,
+                "muzzle_velocity": 883
+              },
+              "penetration": {
+                "10m": 87,
+                "100m": 84,
+                "500m": 73,
+                "1000m": 60,
+                "1500m": 50,
+                "2000m": 41
+              }
+            }
+          },
+          "reload": {
+            "base": 3.7,
+            "ace": 2.9
+          },
+          "vertical_guidance": "-10° / +25°",
+          "turret_rotation_speed": {
+            "horizontal": {
+              "base": "16.8°/s ",
+              "ace": "24°/s"
+            },
+            "vertical": {
+              "base": "2.8°/s",
+              "ace": "4°/s"
+            }
           }
         },
-        "gun": {
-          "research": "330 RP",
-          "cost": {
-            "SL": 15,
-            "GE": 35
+        "7.62_mm_M1919A4_machine_gun": {
+          "ammunition": 6000,
+          "belt_capacity": 250,
+          "ammo_types": {
+            "default": {
+              "belt_filling": "AP/T",
+              "penetration": {
+                "10m": 13,
+                "100m": 12,
+                "500m": 7,
+                "1000m": 3,
+                "1500m": 2,
+                "2000m": 0
+              }
+            }
+          },
+          "reload": {
+            "base": 10.4,
+            "ace": 8
+          },
+          "fire_rate": 500,
+          "vertical_guidance": "-10° / +40°",
+          "horizontal_guidance": "-60° / +60°",
+          "turret_rotation_speed": {
+            "horizontal": {
+              "base": "63°/s",
+              "ace": "90°/s"
+            },
+            "vertical": {
+              "base": "63°/s",
+              "ace": "90°/s"
+            }
+          }
+        },
+        "7.62_mm_M1919A4_machine_gun_coaxial": {
+          "ammunition": 3000,
+          "belt_capacity": 250,
+          "ammo_types": {
+            "default": {
+              "belt_filling": "AP/T",
+              "penetration": {
+                "10m": 13,
+                "100m": 12,
+                "500m": 7,
+                "1000m": 3,
+                "1500m": 2,
+                "2000m": 0
+              }
+            }
+          },
+          "reload": {
+            "base": 10.4,
+            "ace": 8
+          },
+          "fire_rate": 500
+        }
+      },
+      "economy": {
+        "repair_cost": {
+          "ab": 106,
+          "rb": 95,
+          "sb": 111
+        },
+        "crew_training": {
+          "cost": 200,
+          "expert": "1000 SL",
+          "ace": "20 GE",
+          "research_aces": "96,000 RP"
+        },
+        "reward_multiplier": {
+          "SL": {
+            "ab": 0.1,
+            "rb": 0.1,
+            "sb": 0.1
+          },
+          "RP": {
+            "rp": 1.0
+          },
+          "total_cost_of_modifications": {
+            "RP": 2970,
+            "SL": 890
+          },
+          "talisman_cost": {
+            "GE": 190
+          }
+        }
+      },
+      "modifications": {
+        "mobility": {
+          "tracks": {
+            "research": "150 RP",
+            "cost": {
+              "SL": 45,
+              "GE": 45
+            }
+          },
+          "suspension": {
+            "research": "165 RP",
+            "cost": {
+              "SL": 50,
+              "GE": 45
+            }
+          },
+          "brake_system": {
+            "research": "165 RP",
+            "cost": {
+              "SL": 50,
+              "GE": 45
+            }
+          },
+          "filters": {
+            "research": "250 RP",
+            "cost": {
+              "SL": 75,
+              "GE": 70
+            }
+          },
+          "transmission": {
+            "research": "320 RP",
+            "cost": {
+              "SL": 95,
+              "GE": 85
+            }
+          },
+          "engine": {
+            "research": "320 RP",
+            "cost": {
+              "SL": 95,
+              "GE": 85
+            }
+          }
+        },
+        "protection": {
+          "improved_parts": {
+            "research": "150 RP",
+            "cost": {
+              "SL": 45,
+              "GE": 40
+            }
+          },
+          "improved_fpe": {
+            "research": "165 RP",
+            "cost": {
+              "SL": 50,
+              "GE": 45
+            }
+          },
+          "crew_replenishment": {
+            "research": "250 RP",
+            "cost": {
+              "SL": 75,
+              "GE": 70
+            }
+          }
+        },
+        "firepower": {
+          "horizontal_drive": {
+            "research": "150 RP",
+            "cost": {
+              "SL": 45,
+              "GE": 40
+            }
+          },
+          "adjustment_of_fire": {
+            "research": "165 RP",
+            "cost": {
+              "SL": 50,
+              "GE": 45
+            }
+          },
+          "elevation_mechanism": {
+            "research": "250 RP",
+            "cost": {
+              "SL": 75,
+              "GE": 70
+            }
+          },
+          "artillery_support": {
+            "research": "320 RP",
+            "cost": {
+              "SL": 95,
+              "GE": 85
+            }
+          },
+          "m51b1_shot": {
+            "research": "150 RP",
+            "cost": {
+              "SL": 45,
+              "GE": 40
+            }
           }
         }
       }
     }
-  }
-]
+  ],
+  "germany": [
+    {
+      "id": 1,
+      "tankid": "garford-beute",
+      "name": "Garford-Beute",
+      "nation": "germany",
+      "type": "light",
+      "tier": 1,
+      "ratings": {
+        "ab_rating": 1.0,
+        "rb_rating": 1.0,
+        "sb_rating": 1.0
+      },
+      "manufacturer": "N/A",
+      "update": "Update 2.45 'Hornet's Sting'",
+      "survival_armour": {
+        "armour": {
+          "hull": {
+            "front": 6,
+            "side": 6,
+            "rear": 6
+          },
+          "turret": {
+            "front": 6,
+            "side": 6,
+            "rear": 6
+          }
+        },
+        "visibility": 70,
+        "crew": 6
+      },
+      "mobility": {
+        "max_speed": {
+          "forward": 18,
+          "backward": 18
+        },
+        "power_to_weight_ratio": 3.5,
+        "engine_power": 30,
+        "weight": 8.6
+      },
+      "optics": {
+        "gunner": "1.9 - 3.5x",
+        "commander": "-",
+        "driver": "-"
+      },
+      "armament": {
+        "76.2_mm_model_1910_cannon": {
+          "ammunition": 44,
+          "first_order": 12,
+          "ammo_types": {
+            "76_mm_granata": {
+              "type": "HE",
+              "shell_stats": {
+                "caliber": 76.2,
+                "mass": 6.4,
+                "muzzle_velocity": 381,
+                "fuze_delay": 0.3,
+                "fuze_sensitivity": 0.1,
+                "explosive_type": "TNT",
+                "explosive_mass": 0.785
+              },
+              "penetration": {
+                "10m": 24,
+                "100m": 24,
+                "500m": 21,
+                "1000m": 18,
+                "1500m": 16,
+                "2000m": 14
+              }
+            },
+            "76_mm_shrapnel": {
+              "type": "Shrapnel",
+              "shell_stats": {
+                "caliber": 76.2,
+                "mass": 6.5,
+                "muzzle_velocity": 381,
+                "fuze_delay": 1.2,
+                "fuze_sensitivity": 4,
+                "explosive_type": "TNT",
+                "explosive_mass": 0.085
+              },
+              "penetration": {
+                "10m": 18,
+                "100m": 17,
+                "500m": 16,
+                "1000m": 14,
+                "1500m": 12,
+                "2000m": 10
+              }
+            }
+          },
+          "reload": {
+            "base": 5.2,
+            "ace": 4
+          },
+          "vertical_guidance": "-5° / +15°",
+          "horizontal_guidance": "-125° / +140°",
+          "turret_rotation_speed": {
+            "horizontal": {
+              "base": "10.5°/s",
+              "ace": "15°/s"
+            },
+            "vertical": {
+              "base": "2.8°/s",
+              "ace": "4°/s"
+            }
+          }
+        },
+        "7.92_mm_MG08_machine_gun_coaxial": {
+          "ammunition": 2000,
+          "belt_capacity": 250,
+          "ammo_types": {
+            "default": {
+              "belt_filling": "AP-I, AP-I, AP-T",
+              "penetration": {
+                "10m": 9,
+                "100m": 8,
+                "500m": 6,
+                "1000m": 3,
+                "1500m": 0,
+                "2000m": 0
+              }
+            }
+          },
+          "reload": {
+            "base": 6.5,
+            "ace": 5
+          },
+          "fire_rate": 500
+        },
+        "7.92_mm_MG08_machine_gun": {
+          "ammunition": 4000,
+          "belt_capacity": 250,
+          "ammo_types": {
+            "default": {
+              "belt_filling": "AP-I, AP-I, AP-T",
+              "penetration": {
+                "10m": 9,
+                "100m": 8,
+                "500m": 6,
+                "1000m": 3,
+                "1500m": 0,
+                "2000m": 0
+              }
+            }
+          },
+          "reload": {
+            "base": 10.4,
+            "ace": 8
+          },
+          "fire_rate": 500,
+          "vertical_guidance": "-4° / +10°",
+          "horizontal_guidance": "-80° / +1°",
+          "turret_rotation_speed": {
+            "horizontal": {
+              "base": "42°/s",
+              "ace": "60°/s"
+            },
+            "vertical": {
+              "base": "42°/s",
+              "ace": "60°/s"
+            }
+          }
+        }
+      },
+      "economy": {
+        "repair_cost": {
+          "ab": 105,
+          "rb": 94,
+          "sb": 110
+        },
+        "crew_training": {
+          "cost": 200,
+          "expert": "1000 SL",
+          "ace": "20 GE",
+          "research_aces": "96,000 RP"
+        },
+        "reward_multiplier": {
+          "SL": {
+            "ab": 0.1,
+            "rb": 0.1,
+            "sb": 0.2
+          },
+          "RP": {
+            "rp": 1.0
+          },
+          "total_cost_of_modifications": {
+            "RP": 2970,
+            "SL": 890
+          },
+          "talisman_cost": {
+            "GE": 190
+          }
+        }
+      },
+      "modifications": {
+        "mobility": {
+          "tires": {
+            "research": "200 RP",
+            "cost": {
+              "SL": 60,
+              "GE": 50
+            }
+          },
+          "suspension": {
+            "research": "165 RP",
+            "cost": {
+              "SL": 50,
+              "GE": 40
+            }
+          },
+          "brake_system": {
+            "research": "165 RP",
+            "cost": {
+              "SL": 50,
+              "GE": 40
+            }
+          },
+          "filters": {
+            "research": "250 RP",
+            "cost": {
+              "SL": 75,
+              "GE": 65
+            }
+          },
+          "transmission": {
+            "research": "320 RP",
+            "cost": {
+              "SL": 95,
+              "GE": 80
+            }
+          },
+          "engine": {
+            "research": "320 RP",
+            "cost": {
+              "SL": 95,
+              "GE": 80
+            }
+          }
+        },
+        "protection": {
+          "improved_parts": {
+            "research": "200 RP",
+            "cost": {
+              "SL": 60,
+              "GE": 50
+            }
+          },
+          "improved_fpe": {
+            "research": "165 RP",
+            "cost": {
+              "SL": 50,
+              "GE": 40
+            }
+          },
+          "crew_replenishment": {
+            "research": "250 RP",
+            "cost": {
+              "SL": 75,
+              "GE": 65
+            }
+          }
+        },
+        "firepower": {
+          "horizontal_drive": {
+            "research": "200 RP",
+            "cost": {
+              "SL": 60,
+              "GE": 50
+            }
+          },
+          "adjustment_of_fire": {
+            "research": "165 RP",
+            "cost": {
+              "SL": 50,
+              "GE": 40
+            }
+          },
+          "elevation_mechanism": {
+            "research": "250 RP",
+            "cost": {
+              "SL": 75,
+              "GE": 65
+            }
+          },
+          "artillery_support": {
+            "research": "320 RP",
+            "cost": {
+              "SL": 95,
+              "GE": 80
+            }
+          }
+        }
+      }
+    }
+  ],
+  "ussr": [
+    {
+      "id": 1,
+      "tankid": "bt-5",
+      "name": "BT-5",
+      "nation": "ussr",
+      "type": "light",
+      "tier": 1,
+      "ratings": {
+        "ab_rating": 1.0,
+        "rb_rating": 1.0,
+        "sb_rating": 1.0
+      },
+      "manufacturer": "Morozov",
+      "update": "Update 1.45 'Steel Generals'",
+      "survival_armour": {
+        "armour": {
+          "hull": {
+            "front": 13,
+            "side": 15,
+            "rear": 13
+          },
+          "turret": {
+            "front": 20,
+            "side": 15,
+            "rear": 15
+          }
+        },
+        "visibility": 76,
+        "crew": 3
+      },
+      "mobility": {
+        "max_speed": {
+          "forward": 51,
+          "backward": 10
+        },
+        "power_to_weight_ratio": 34.5,
+        "engine_power": 400,
+        "weight": 11.6
+      },
+      "optics": {
+        "gunner": "1.9 - 3.5x",
+        "commander": "-",
+        "driver": "-"
+      },
+      "armament": {
+        "45_mm_20-K_cannon": {
+          "ammunition": 86,
+          "ammo_types": {
+            "br-240": {
+              "type": "APHEBC",
+              "shell_stats": {
+                "caliber": 45,
+                "mass": 1.4,
+                "muzzle_velocity": 760,
+                "fuze_delay": 1.2,
+                "fuze_sensitivity": 9,
+                "explosive_type": "A-IX-2",
+                "explosive_mass": 19,
+                "tnt_equivalent": 29
+              },
+              "penetration": {
+                "10m": 70,
+                "100m": 67,
+                "500m": 58,
+                "1000m": 47,
+                "1500m": 39,
+                "2000m": 32
+              }
+            },
+            "br-240sp": {
+              "type": "APBC",
+              "shell_stats": {
+                "caliber": 45,
+                "mass": 1.4,
+                "muzzle_velocity": 757
+              },
+              "penetration": {
+                "10m": 73,
+                "100m": 70,
+                "500m": 60,
+                "1000m": 50,
+                "1500m": 41,
+                "2000m": 34
+              }
+            }
+          },
+          "reload": {
+            "base": 3.8,
+            "ace": 2.9
+          },
+          "vertical_guidance": "-8° / +25°",
+          "turret_rotation_speed": {
+            "horizontal": {
+              "base": "11.2°/s",
+              "ace": "16°/s"
+            },
+            "vertical": {
+              "base": "2.8°/s",
+              "ace": "4°/s"
+            }
+          }
+        },
+        "7.62_mm_DT_machine_gun_coaxial": {
+          "ammunition": 1890,
+          "belt_capacity": 63,
+          "ammo_types": {
+            "default": {
+              "belt_filling": "AP-I, API-T",
+              "penetration": {
+                "10m": 13,
+                "100m": 12,
+                "500m": 7,
+                "1000m": 3,
+                "1500m": 2,
+                "2000m": 0
+              }
+            }
+          },
+          "reload": {
+            "base": 10.4,
+            "ace": 8
+          },
+          "fire_rate": 600
+        }
+      },
+      "economy": {
+        "repair_cost": {
+          "ab": 0,
+          "rb": 0,
+          "sb": 0
+        },
+        "crew_training": {
+          "cost": 0,
+          "expert": "1000 SL",
+          "ace": "10 GE",
+          "research_aces": "80,000 RP"
+        },
+        "reward_multiplier": {
+          "SL": {
+            "ab": 0.1,
+            "rb": 0.1,
+            "sb": 0.1
+          },
+          "RP": {
+            "rp": 1.0
+          },
+          "total_cost_of_modifications": {
+            "RP": 3730,
+            "SL": 174
+          },
+          "talisman_cost": {
+            "GE": 190
+          }
+        }
+      },
+      "modifications": {
+        "mobility": {
+          "tracks": {
+            "research": "330 RP",
+            "cost": {
+              "SL": 15,
+              "GE": 35
+            }
+          },
+          "suspension": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          },
+          "brake_system": {
+            "research": "380 RP",
+            "cost": {
+              "SL": 17,
+              "GE": 40
+            }
+          },
+          "filters": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          },
+          "transmission": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          },
+          "engine": {
+            "research": "720 RP",
+            "cost": {
+              "SL": 35,
+              "GE": 75
+            }
+          }
+        },
+        "protection": {
+          "improved_parts": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          },
+          "improved_fpe": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          },
+          "crew_replenishment": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          }
+        },
+        "firepower": {
+          "horizontal_drive": {
+            "research": "330 RP",
+            "cost": {
+              "SL": 15,
+              "GE": 35
+            }
+          },
+          "adjustment_of_fire": {
+            "research": "380 RP",
+            "cost": {
+              "SL": 17,
+              "GE": 40
+            }
+          },
+          "elevation_mechanism": {
+            "research": "540 RP",
+            "cost": {
+              "SL": 25,
+              "GE": 60
+            }
+          },
+          "artillery_support": {
+            "research": "720 RP",
+            "cost": {
+              "SL": 35,
+              "GE": 75
+            }
+          },
+          "br-240sp": {
+            "research": "330 RP",
+            "cost": {
+              "SL": 15,
+              "GE": 35
+            }
+          }
+        }
+      }
+    }
+  ],
+  "great_britain": [
+    {
+      "id": 1,
+      "tankid": "a13mk1",
+      "name": "A13 Mk I",
+      "nation": "great_britain",
+      "type": "light",
+      "tier": 1,
+      "ratings": {
+        "ab_rating": 1.0,
+        "rb_rating": 1.0,
+        "sb_rating": 1.0
+      },
+      "manufacturer": "Nuffield",
+      "update": "Update 1.55 'Royal Armour'",
+      "survival_armour": {
+        "armour": {
+          "hull": {
+            "front": 14,
+            "side": 14,
+            "rear": 14
+          },
+          "turret": {
+            "front": 14,
+            "side": 14,
+            "rear": 14
+          }
+        },
+        "visibility": 93,
+        "crew": 4
+      },
+      "mobility": {
+        "max_speed": {
+          "forward": 48,
+          "backward": 6
+        },
+        "power_to_weight_ratio": 24.6,
+        "engine_power": 340,
+        "weight": 13.8
+      },
+      "optics": {
+        "gunner": "1.9 - 3.5x",
+        "commander": "-",
+        "driver": "-"
+      },
+      "armament": {
+        "40_mm_QF_2-pounder_cannon": {
+          "ammunition": 87,
+          "ammo_types": {
+            "shot_mk.1_ap/t": {
+              "type": "AP",
+              "shell_stats": {
+                "caliber": 40,
+                "mass": 1.1,
+                "muzzle_velocity": 792
+              },
+              "penetration": {
+                "10m": 72,
+                "100m": 68,
+                "500m": 52,
+                "1000m": 37,
+                "1500m": 27,
+                "2000m": 19
+              }
+            },
+            "shot_mk.ixb_apcbc/t": {
+              "type": "APCBC",
+              "shell_stats": {
+                "caliber": 40,
+                "mass": 1.2,
+                "muzzle_velocity": 792
+              },
+              "penetration": {
+                "10m": 89,
+                "100m": 86,
+                "500m": 77,
+                "1000m": 66,
+                "1500m": 57,
+                "2000m": 50
+              }
+            },
+            "shot_mk.1_aphv/t": {
+              "type": "AP",
+              "shell_stats": {
+                "caliber": 76.2,
+                "mass": 1.1,
+                "muzzle_velocity": 853
+              },
+              "penetration": {
+                "10m": 80,
+                "100m": 75,
+                "500m": 58,
+                "1000m": 41,
+                "1500m": 30,
+                "2000m": 21
+              }
+            },
+            "shell_mk1_ap/t": {
+              "type": "APHE",
+              "shell_stats": {
+                "caliber": 40,
+                "mass": 1.1,
+                "muzzle_velocity": 792,
+                "fuze_delay": 1.2,
+                "fuze_sensitivity": 9,
+                "explosive_type": "Lyddite",
+                "explosive_mass": 19,
+                "tnt_equivalent": 21
+              },
+              "penetration": {
+                "10m": 66,
+                "100m": 62,
+                "500m": 49,
+                "1000m": 36,
+                "1500m": 26,
+                "2000m": 19
+              }
+            }
+          },
+          "reload": {
+            "base": 3.6,
+            "ace": 2.8
+          },
+          "vertical_guidance": "-15° / +20°",
+          "turret_rotation_speed": {
+            "horizontal": {
+              "base": "25.2°/s",
+              "ace": "36°/s"
+            },
+            "vertical": {
+              "base": "10.5°/s",
+              "ace": "15°/s"
+            }
+          }
+        },
+        "7.7_mm_Vickers_machine_gun_coaxial": {
+          "ammunition": 3500,
+          "belt_capacity": 250,
+          "ammo_types": {
+            "default": {
+              "belt_filling": "IT, AP, AP",
+              "penetration": {
+                "10m": 13,
+                "100m": 12,
+                "500m": 7,
+                "1000m": 3,
+                "1500m": 2,
+                "2000m": 0
+              }
+            }
+          },
+          "reload": {
+            "base": 10.4,
+            "ace": 8
+          },
+          "fire_rate": 390
+        }
+      },
+      "economy": {
+        "repair_cost": {
+          "ab": 0,
+          "rb": 0,
+          "sb": 0
+        },
+        "crew_training": {
+          "cost": 0,
+          "expert": "1000 SL",
+          "ace": "10 GE",
+          "research_aces": "80,000 RP"
+        },
+        "reward_multiplier": {
+          "SL": {
+            "ab": 0.1,
+            "rb": 0.1,
+            "sb": 0.1
+          },
+          "RP": {
+            "rp": 1.0
+          },
+          "total_cost_of_modifications": {
+            "RP": 3730,
+            "SL": 170
+          },
+          "talisman_cost": {
+            "GE": 190
+          }
+        }
+      },
+      "modifications": {
+        "mobility": {
+          "tracks": {
+            "research": "330 RP",
+            "cost": {
+              "SL": 15,
+              "GE": 35
+            }
+          },
+          "suspension": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          },
+          "brake_system": {
+            "research": "300 RP",
+            "cost": {
+              "SL": 13,
+              "GE": 40
+            }
+          },
+          "filters": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          },
+          "transmission": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          },
+          "engine": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          }
+        },
+        "protection": {
+          "improved_parts": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          },
+          "improved_fpe": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          },
+          "crew_replenishment": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          }
+        },
+        "firepower": {
+          "horizontal_drive": {
+            "research": "330 RP",
+            "cost": {
+              "SL": 15,
+              "GE": 35
+            }
+          },
+          "adjustment_of_fire": {
+            "research": "300 RP",
+            "cost": {
+              "SL": 13,
+              "GE": 40
+            }
+          },
+          "elevation_mechanism": {
+            "research": "410 RP",
+            "cost": {
+              "SL": 18,
+              "GE": 55
+            }
+          },
+          "artillery_support": {
+            "research": "530 RP",
+            "cost": {
+              "SL": 25,
+              "GE": 70
+            }
+          },
+          "shot_mk.1_aphv/t": {
+            "research": "330 RP",
+            "cost": {
+              "SL": 15,
+              "GE": 35
+            }
+          },
+          "shot_mk.1_ap/t": {
+            "research": "300 RP",
+            "cost": {
+              "SL": 13,
+              "GE": 40
+            }
+          },
+          "smoke_grenade": {
+            "research": "410 RP",
+            "cost": {
+              "SL": 18,
+              "GE": 55
+            }
+          },
+          "shot_mk.ixb_apcbc/t": {
+            "research": "540 RP",
+            "cost": {
+              "SL": 25,
+              "GE": 70
+            }
+          }
+        }
+      }
+    }
+  ]
+}

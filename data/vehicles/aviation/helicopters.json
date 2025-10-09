@@ -1,0 +1,223 @@
+{
+  "usa": [
+    {
+      "id": 1,
+      "helicopterid": "ah-1g",
+      "name": "AH-1G",
+      "nation": "usa",
+      "type": "Attack Helicopter",
+      "tier": 5,
+      "ratings": {
+        "ab_rating": 8.7,
+        "rb_rating": 8.0,
+        "sb_rating": 8.0
+      },
+      "manufacturer": "Bell",
+      "update": "Update 1.81 'The Valkyries'",
+      "flight_performance": {
+        "max_speed": {
+          "kmh": 277,
+          "altitude": 1000
+        },
+        "rate_of_climb": 8.2,
+        "max_altitude": 3475
+      },
+      "general_characteristics": {
+        "crew": 2,
+        "engine": "Lycoming Engines T53-L-13",
+        "main-rotor_diameter": 14.2,
+        "weight": {
+          "base_weight_t": 2.97,
+          "fuel_in_main_tanks_t": 0.71,
+          "endurance": "1h 50m"
+        }
+      },
+      "offensive_armament": {
+        "7.62_mm_M134_minigun_machine_gun": {
+          "ammunition": 8000,
+          "fire_rate": 4000
+        },
+        "40_mm_M129_grenade_launcher": {
+          "ammunition": 600,
+          "ammo_types": {
+            "default": {
+              "belt_filling": "HEATGR",
+              "penetration": {
+                "10m": 51,
+                "100m": 51,
+                "500m": 51,
+                "1000m": 51,
+                "1500m": 51,
+                "2000m": 51
+              }
+            }
+          },
+          "fire_rate": 396,
+          "one_second_burst_mass": 1.62
+        }
+      },
+      "suspended_armament": {
+        "max_weight": 1450,
+        "wing_loading": {
+          "maximum": 725,
+          "max_difference": 450
+        },
+        "weapons": {
+          "7_FFAR_mighty_mouse_rockets": {
+            "caliber": 70,
+            "projectile_mass": 9,
+            "explosive_type": "Composition B",
+            "explosive_mass": 0.907,
+            "tnt_equivalent": 1.2,
+            "weight": 93.3
+          },
+          "19_FFAR_mighty_mouse_rockets": {
+            "caliber": 70,
+            "projectile_mass": 9,
+            "explosive_type": "Composition B",
+            "explosive_mass": 0.907,
+            "tnt_equivalent": 1.2,
+            "weight": 233.8
+          },
+          "7.62_mm_M134_minigun_machine_gun": {
+            "ammunition": 1500,
+            "weight": 126.9
+          },
+          "20_mm_M195_cannon": {
+            "ammunition": 950,
+            "weight": 344.9
+          }
+        }
+      },
+      "economy": {
+        "repair_cost": {
+          "ab": 9426,
+          "rb": 2778,
+          "sb": 4189
+        },
+        "crew_training": {
+          "cost": 105000,
+          "expert": "370000 SL",
+          "ace": "1500 GE",
+          "research_aces": "670,000 RP"
+        },
+        "reward_multiplier": {
+          "SL": {
+            "ab": 1,
+            "rb": 3,
+            "sb": 4.3
+          },
+          "RP": {
+            "rp": 1.9
+          },
+          "total_cost_of_modifications": {
+            "RP": 74400,
+            "SL": 169000
+          },
+          "talisman_cost": {
+            "GE": 2000
+          }
+        }
+      },
+      "modifications": {
+        "flight_performance": {
+          "compressor": {
+            "research": "3000 RP",
+            "cost": {
+              "SL": 6800,
+              "GE": 160
+            }
+          },
+          "replacing_helicopter_blades": {
+            "research": "5600 RP",
+            "cost": {
+              "SL": 13000,
+              "GE": 300
+            }
+          },
+          "engine": {
+            "research": "9300 RP",
+            "cost": {
+              "SL": 21000,
+              "GE": 500
+            }
+          }
+        },
+        "survivability": {
+          "flak_jacket": {
+            "research": "3000 RP",
+            "cost": {
+              "SL": 6800,
+              "GE": 160
+            }
+          },
+          "helicopter_frame": {
+            "research": "5600 RP",
+            "cost": {
+              "SL": 13000,
+              "GE": 300
+            }
+          },
+          "cover": {
+            "research": "8000 RP",
+            "cost": {
+              "SL": 18000,
+              "GE": 430
+            }
+          }
+        },
+        "weaponry": {
+          "new_7.62mm_mgs": {
+            "research": "3000 RP",
+            "cost": {
+              "SL": 6800,
+              "GE": 160
+            }
+          },
+          "m18a1_gun_pod": {
+            "research": "3000 RP",
+            "cost": {
+              "SL": 6800,
+              "GE": 160
+            }
+          },
+          "m20041": {
+            "research": "3000 RP",
+            "cost": {
+              "SL": 6800,
+              "GE": 160
+            }
+          },
+          "m129": {
+            "research": "5600 RP",
+            "cost": {
+              "SL": 13000,
+              "GE": 300
+            }
+          },
+          "xm-35_gun_pod": {
+            "research": "9300 RP",
+            "cost": {
+              "SL": 21000,
+              "GE": 500
+            }
+          },
+          "new_40_mm_cannons": {
+            "research": "8000 RP",
+            "cost": {
+              "SL": 18000,
+              "GE": 430
+            }
+          },
+          "offensive_20_mm_belts": {
+            "research": "8000 RP",
+            "cost": {
+              "SL": 18000,
+              "GE": 430
+            }
+          }
+        }
+      }
+    }
+  ]
+}

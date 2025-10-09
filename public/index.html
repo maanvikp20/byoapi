@@ -37,15 +37,16 @@
       <div class="links">
         <h2>Try it now!</h2>
 
-        <form class="api-input-container" onsubmit="event.preventDefault();">
-          <span class="api-base">https://localhost:5000/aviation/</span>
+        <form class="api-input-container" id="apiForm">
+          <span class="api-base">http://localhost:5000/api/</span>
           <input
             class="api-path-input"
+            id="apiPath"
             type="text"
             value="f3f"
             aria-label="API Path"
           />
-          <button class="api-copy-btn" type="button" title="Copy">
+          <button class="api-copy-btn" type="button" id="copyBtn" title="Copy">
             <img
               src="https://img.icons8.com/material-outlined/24/000000/copy.png"
               alt="Copy"
@@ -57,27 +58,33 @@
         <div class="help">
           <p>Need a hint? Try the following API endpoints:</p>
           <ul>
-            <li><code>/aviation/aircraft</code> — List all aircraft</li>
+            <li><code>vehicles/aviation</code> — List all aircraft</li>
             <li>
-              <code>/aviation/aircraft/:id</code> — Details for a specific
+              <code>vehicles/aviation/aircraft</code> — Details for a specific
               aircraft
             </li>
-            <li><code>/aviation/helicopters</code> — List all helicopters</li>
             <li>
-              <code>/aviation/helicopters/:id</code> — Details for a specific
-              helicopter
+              <code>vehicles/aviation/helicopters</code> — List all helicopters
+            </li>
+            <li>
+              <code>vehicles/aviation/helicopters/:id</code> — Details for a
+              specific helicopter
+            </li>
+            <li>
+              <code>vehicles/aviation/aircraft/:id</code> — Details for a
+              specific aircraft
             </li>
             <li><code>/nations</code> — List all playable nations</li>
           </ul>
           <p>
             Direct link example:
-            <a href="https://localhost:5000/aviation/aircraft" target="_blank"
-              >https://localhost:5000/aviation/aircraft</a
-            >
+            <a href="http://localhost:5000/aviation/aircraft" target="_blank">
+              http://localhost:5000/aviation/aircraft
+            </a>
           </p>
         </div>
 
-        <div class="data-display">
+        <div class="data-display" id="dataDisplay">
           <!-- API results will be displayed here -->
         </div>
       </div>
@@ -105,5 +112,42 @@
         Gaijin Entertainment.
       </p>
     </div>
+
+    <script>
+      const form = document.getElementById("apiForm");
+      const apiPathInput = document.getElementById("apiPath");
+      const copyBtn = document.getElementById("copyBtn");
+      const dataDisplay = document.getElementById("dataDisplay");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const baseURL = "http://localhost:5000/api/";
+        const endpoint = apiPathInput.value.trim();
+        const fullURL = baseURL + endpoint;
+
+        dataDisplay.innerHTML = "<p>Loading...</p>";
+
+        try {
+          const res = await fetch(fullURL);
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          const data = await res.json();
+
+          dataDisplay.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+        } catch (err) {
+          dataDisplay.innerHTML = `<p style="color:red;">Error: ${err.message}</p>`;
+        }
+      });
+
+      copyBtn.addEventListener("click", async () => {
+        const fullURL = `http://localhost:5000/api/${apiPathInput.value.trim()}`;
+        try {
+          await navigator.clipboard.writeText(fullURL);
+          copyBtn.title = "Copied!";
+          setTimeout(() => (copyBtn.title = "Copy"), 1500);
+        } catch {
+          alert("Failed to copy URL.");
+        }
+      });
+    </script>
   </body>
 </html>

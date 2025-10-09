@@ -1,0 +1,1014 @@
+{
+  "usa": [
+    {
+      "id": 1,
+      "aircraftid": "p-26a-34m2",
+      "name": "P-26A-34 M2",
+      "nation": "usa",
+      "type": "fighter",
+      "tier": 1,
+      "ratings": {
+        "ab_rating": 1.0,
+        "rb_rating": 1.0,
+        "sb_rating": 1.0
+      },
+      "manufacturer": "Boeing",
+      "update": "Aircraft CBT'",
+      "flight-performance": {
+        "max_speed": {
+          "kmh": 377,
+          "altitude": 2286
+        },
+        "rate_of_climb": 12,
+        "turn_time": 12,
+        "max_altitude": 8500,
+        "takeoff_run": 170,
+        "gearbox": {
+          "landing_flaps": true,
+          "take-off_flaps": false,
+          "combat_flaps": false,
+          "airbrake": false,
+          "gear_control": false
+        }
+      },
+      "general_characteristics": {
+        "crew": 1,
+        "engine": "Pratt & Whitney R-1340-33",
+        "length_m": 7.2,
+        "wingspan_m": 8.5,
+        "wing_loading_kg_m2": 110,
+        "weight": {
+          "base_weight_t": 1.23,
+          "fuel_in_main_tanks_t": 0.29,
+          "endurance": "1h 42m"
+        },
+        "limits": {
+          "max_speed_limit_ias_kmh": 508,
+          "mach_number_limit": 0.7,
+          "g_limit": {
+            "negative": -8,
+            "positive": 12
+          },
+          "flap_speed_limit_ias": {
+            "landing": 240
+          }
+        }
+      },
+      "offensive_armament": {
+        "12.7_mm_m2_browning_machine_gun": {
+          "ammunition": 200,
+          "ammo_types": {
+            "default": {
+              "belt-fitting": "T, Ball, I, AP",
+              "penetration": {
+                "10m": 30,
+                "100m": 27,
+                "500m": 20,
+                "1000m": 13,
+                "1500m": 9,
+                "2000m": 6
+              }
+            },
+            "universal": {
+              "belt-fitting": "T, AP, AP, I",
+              "penetration": {
+                "10m": 30,
+                "100m": 27,
+                "500m": 20,
+                "1000m": 13,
+                "1500m": 9,
+                "2000m": 6
+              }
+            },
+            "ground_targets": {
+              "belt-fitting": "T, AP, AP, AP",
+              "penetration": {
+                "10m": 30,
+                "100m": 27,
+                "500m": 20,
+                "1000m": 13,
+                "1500m": 9,
+                "2000m": 6
+              }
+            },
+            "tracers": {
+              "belt-fitting": "T, T, AP",
+              "penetration": {
+                "10m": 30,
+                "100m": 27,
+                "500m": 20,
+                "1000m": 13,
+                "1500m": 9,
+                "2000m": 6
+              }
+            },
+            "stealth": {
+              "belt-fitting": "AP, I, AP",
+              "penetration": {
+                "10m": 30,
+                "100m": 27,
+                "500m": 20,
+                "1000m": 13,
+                "1500m": 9,
+                "2000m": 6
+              }
+            }
+          },
+          "fire_rate": 750,
+          "one_second_burst_mass": 0.55
+        },
+        "7.62_mm_browning_machine_gun": {
+          "ammunition": 500,
+          "ammo_types": {
+            "default": {
+              "belt-fitting": "T, AP, AP, AP, I",
+              "penetration": {
+                "10m": 13,
+                "100m": 12,
+                "500m": 7,
+                "1000m": 3,
+                "1500m": 2,
+                "2000m": 0
+              }
+            },
+            "universal": {
+              "belt-fitting": "T, AP, I",
+              "penetration": {
+                "10m": 13,
+                "100m": 12,
+                "500m": 7,
+                "1000m": 3,
+                "1500m": 2,
+                "2000m": 0
+              }
+            },
+            "ground_targets": {
+              "belt-fitting": "AP, T, T",
+              "penetration": {
+                "10m": 13,
+                "100m": 12,
+                "500m": 7,
+                "1000m": 3,
+                "1500m": 2,
+                "2000m": 0
+              }
+            },
+            "tracers": {
+              "belt-fitting": "AP, AP, I, I",
+              "penetration": {
+                "10m": 13,
+                "100m": 12,
+                "500m": 7,
+                "1000m": 3,
+                "1500m": 2,
+                "2000m": 0
+              }
+            }
+          }
+        }
+      },
+      "suspended_armament": {
+        "100_lb_AN_M30A1_bomb": {
+          "count": 2,
+          "projectile_mass": 110,
+          "explosive_type": "Amatol",
+          "explosive_mass": 24.5
+        }
+      },
+      "economy": {
+        "repair_cost": {
+          "ab": 0,
+          "rb": 0,
+          "sb": 0
+        },
+        "crew_training": {
+          "cost": 0,
+          "expert": "1000 SL",
+          "ace": "10 GE",
+          "research_aces": "80,000 RP"
+        },
+        "reward_multiplier": {
+          "SL": {
+            "ab": 0.1,
+            "rb": 0.1,
+            "sb": 0.1
+          },
+          "RP": {
+            "rp": 1.0
+          },
+          "total_cost_of_modifications": {
+            "RP": 3620,
+            "SL": 167
+          },
+          "talisman_cost": {
+            "GE": 190
+          }
+        }
+      },
+      "modifications": {
+        "flight_performance": {
+          "fuselage_repair": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          },
+          "radiator": {
+            "research": "440 RP",
+            "cost": {
+              "SL": 19,
+              "GE": 45
+            }
+          },
+          "compressor": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          },
+          "wings_repair": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          },
+          "engine": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          },
+          "engine_injection": {
+            "research": "720 RP",
+            "cost": {
+              "SL": 35,
+              "GE": 70
+            }
+          }
+        },
+        "survivability": {
+          "airframe": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          },
+          "cover": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          }
+        },
+        "weaponry": {
+          "offensive_7.62mm_belts": {
+            "research": "440 RP",
+            "cost": {
+              "SL": 19,
+              "GE": 45
+            }
+          },
+          "new_7.62mm_mgs": {
+            "research": "380 RP",
+            "cost": {
+              "SL": 17,
+              "GE": 35
+            }
+          },
+          "mk.41": {
+            "research": "380 RP",
+            "cost": {
+              "SL": 17,
+              "GE": 35
+            }
+          },
+          "offensive_12.7mm_belts": {
+            "research": "540 RP",
+            "cost": {
+              "SL": 25,
+              "GE": 55
+            }
+          },
+          "new_12.7mm_mgs": {
+            "research": "720 RP",
+            "cost": {
+              "SL": 35,
+              "GE": 70
+            }
+          }
+        }
+      }
+    }
+  ],
+  "germany": [
+    {
+      "id": 1,
+      "aircraftid": "bf109b-1",
+      "name": "Bf 109 B-1",
+      "nation": "germany",
+      "type": "fighter",
+      "tier": 1,
+      "ratings": {
+        "ab_rating": 1.7,
+        "rb_rating": 1.3,
+        "sb_rating": 1.3
+      },
+      "manufacturer": "BFW/Messerschmitt",
+      "update": "Update 1.49 'Weapons of Victory'",
+      "flight-performance": {
+        "max_speed": {
+          "kmh": 465,
+          "altitude": 4000
+        },
+        "rate_of_climb": 10.2,
+        "turn_time": 22,
+        "max_altitude": 9000,
+        "takeoff_run": 210,
+        "gearbox": {
+          "landing_flaps": true,
+          "take-off_flaps": true,
+          "combat_flaps": true,
+          "airbrake": false
+        }
+      },
+      "general_characteristics": {
+        "crew": 1,
+        "engine": "Junkers Jumo 210D",
+        "length_m": 8.7,
+        "wingspan_m": 9.9,
+        "wing_loading_kg_m2": 120,
+        "weight": {
+          "base_weight_t": 1.77,
+          "fuel_in_main_tanks_t": 0.18,
+          "endurance": "1h 6m"
+        },
+        "limits": {
+          "max_speed_limit_ias_kmh": 790,
+          "mach_number_limit": 0.82,
+          "g_limit": {
+            "negative": -7,
+            "positive": 13
+          },
+          "flap_speed_limit_ias": {
+            "landing": 250,
+            "take-off": 371,
+            "combat": 388
+          },
+          "gear_speed_limit_ias": 280
+        }
+      },
+      "offensive_armament": {
+        "7.92_mm_mg_17_machine_gun": {
+          "ammunition": 1000,
+          "ammo_types": {
+            "default": {
+              "belt-fitting": "AP-T, AP-I, AI",
+              "penetration": {
+                "10m": 9,
+                "100m": 8,
+                "500m": 6,
+                "1000m": 3,
+                "1500m": 0,
+                "2000m": 0
+              }
+            },
+            "universal": {
+              "belt-fitting": "AP-T, AP, AI, AP-I",
+              "penetration": {
+                "10m": 13,
+                "100m": 12,
+                "500m": 7,
+                "1000m": 3,
+                "1500m": 2,
+                "2000m": 6
+              }
+            },
+            "tracers": {
+              "belt-fitting": "AP-T",
+              "penetration": {
+                "10m": 9,
+                "100m": 8,
+                "500m": 6,
+                "1000m": 3,
+                "1500m": 0,
+                "2000m": 0
+              }
+            },
+            "stealth": {
+              "belt-fitting": "AI, AP, AP, AP, AI",
+              "penetration": {
+                "10m": 13,
+                "100m": 12,
+                "500m": 7,
+                "1000m": 3,
+                "1500m": 2,
+                "2000m": 0
+              }
+            }
+          },
+          "fire_rate": 1200,
+          "one_second_burst_mass": 0.21
+        }
+      },
+      "economy": {
+        "repair_cost": {
+          "ab": 117,
+          "rb": 161,
+          "sb": 113
+        },
+        "crew_training": {
+          "cost": 200,
+          "expert": "1000 SL",
+          "ace": "20 GE",
+          "research_aces": "96,000 RP"
+        },
+        "reward_multiplier": {
+          "SL": {
+            "ab": 0.1,
+            "rb": 0.2,
+            "sb": 0.6
+          },
+          "RP": {
+            "rp": 1.0
+          },
+          "total_cost_of_modifications": {
+            "RP": 2970,
+            "SL": 895
+          },
+          "talisman_cost": {
+            "GE": 190
+          }
+        }
+      },
+      "modifications": {
+        "flight_performance": {
+          "fuselage_repair": {
+            "research": "200 RP",
+            "cost": {
+              "SL": 60,
+              "GE": 40
+            }
+          },
+          "radiator": {
+            "research": "200 RP",
+            "cost": {
+              "SL": 60,
+              "GE": 40
+            }
+          },
+          "compressor": {
+            "research": "330 RP",
+            "cost": {
+              "SL": 100,
+              "GE": 65
+            }
+          },
+          "wings_repair": {
+            "research": "250 RP",
+            "cost": {
+              "SL": 75,
+              "GE": 50
+            }
+          },
+          "engine": {
+            "research": "250 RP",
+            "cost": {
+              "SL": 75,
+              "GE": 50
+            }
+          },
+          "engine_injection": {
+            "research": "480 RP",
+            "cost": {
+              "SL": 145,
+              "GE": 95
+            }
+          }
+        },
+        "survivability": {
+          "airframe": {
+            "research": "330 RP",
+            "cost": {
+              "SL": 100,
+              "GE": 65
+            }
+          },
+          "cover": {
+            "research": "480 RP",
+            "cost": {
+              "SL": 145,
+              "GE": 95
+            }
+          }
+        },
+        "weaponry": {
+          "offensive_7.92mm_belts": {
+            "research": "200 RP",
+            "cost": {
+              "SL": 60,
+              "GE": 40
+            }
+          },
+          "new_7.92mm_mgs": {
+            "research": "250 RP",
+            "cost": {
+              "SL": 75,
+              "GE": 50
+            }
+          }
+        }
+      }
+    }
+  ],
+  "ussr": [
+    {
+      "id": 1,
+      "aircraftid": "i-16type5",
+      "name": "I-16 Type 5",
+      "nation": "ussr",
+      "type": "fighter",
+      "tier": 1,
+      "ratings": {
+        "ab_rating": 1.7,
+        "rb_rating": 1.3,
+        "sb_rating": 1.3
+      },
+      "manufacturer": "Polikarpov",
+      "update": "Update 1.43'",
+      "flight-performance": {
+        "max_speed": {
+          "kmh": 445,
+          "altitude": 2700
+        },
+        "rate_of_climb": 18.5,
+        "turn_time": 15,
+        "max_altitude": 9100,
+        "takeoff_run": 210,
+        "gearbox": {
+          "landing_flaps": true,
+          "take-off_flaps": true,
+          "combat_flaps": true,
+          "airbrake": false
+        }
+      },
+      "general_characteristics": {
+        "crew": 1,
+        "engine": "Shvetsov M-25A",
+        "length_m": 6,
+        "wingspan_m": 9,
+        "wing_loading_kg_m2": 121,
+        "weight": {
+          "base_weight_t": 1.34,
+          "fuel_in_main_tanks_t": 0.15,
+          "endurance": "0h 47m"
+        },
+        "limits": {
+          "max_speed_limit_ias_kmh": 700,
+          "mach_number_limit": 0.76,
+          "g_limit": {
+            "negative": -6,
+            "positive": 14
+          },
+          "flap_speed_limit_ias": {
+            "landing": 700,
+            "take-off": 700,
+            "combat": 700
+          },
+          "gear_speed_limit_ias": 260
+        }
+      },
+      "offensive_armament": {
+        "7.62_mm_ShKAS_machine_gun": {
+          "ammunition": 1800,
+          "ammo_types": {
+            "default": {
+              "belt-fitting": "T, Ball, Ball, AP-I, AI",
+              "penetration": {
+                "10m": 13,
+                "100m": 12,
+                "500m": 7,
+                "1000m": 3,
+                "1500m": 2,
+                "2000m": 0
+              }
+            },
+            "universal": {
+              "belt-fitting": "AP-I, AI, API-T",
+              "penetration": {
+                "10m": 13,
+                "100m": 12,
+                "500m": 7,
+                "1000m": 3,
+                "1500m": 2,
+                "2000m": 0
+              }
+            },
+            "tracers": {
+              "belt-fitting": "AP-I, API-T",
+              "penetration": {
+                "10m": 13,
+                "100m": 12,
+                "500m": 7,
+                "1000m": 3,
+                "1500m": 2,
+                "2000m": 0
+              }
+            },
+            "stealth": {
+              "belt-fitting": "AP-I, AP-I, AP-I, AI",
+              "penetration": {
+                "10m": 13,
+                "100m": 12,
+                "500m": 7,
+                "1000m": 3,
+                "1500m": 2,
+                "2000m": 0
+              }
+            }
+          },
+          "fire_rate": 1800,
+          "one_second_burst_mass": 0.29
+        },
+        "7.62_mm_browning_machine_gun": {
+          "ammunition": 500,
+          "ammo_types": {
+            "default": {
+              "belt-fitting": "T, AP, AP, AP, I",
+              "penetration": {
+                "10m": 13,
+                "100m": 12,
+                "500m": 7,
+                "1000m": 3,
+                "1500m": 2,
+                "2000m": 0
+              }
+            },
+            "universal": {
+              "belt-fitting": "T, AP, I",
+              "penetration": {
+                "10m": 13,
+                "100m": 12,
+                "500m": 7,
+                "1000m": 3,
+                "1500m": 2,
+                "2000m": 0
+              }
+            },
+            "ground_targets": {
+              "belt-fitting": "AP, T, T",
+              "penetration": {
+                "10m": 13,
+                "100m": 12,
+                "500m": 7,
+                "1000m": 3,
+                "1500m": 2,
+                "2000m": 0
+              }
+            },
+            "tracers": {
+              "belt-fitting": "AP, AP, I, I",
+              "penetration": {
+                "10m": 13,
+                "100m": 12,
+                "500m": 7,
+                "1000m": 3,
+                "1500m": 2,
+                "2000m": 0
+              }
+            }
+          }
+        }
+      },
+      "suspended_armament": {
+        "100_lb_AN_M30A1_bomb": {
+          "count": 2,
+          "projectile_mass": 110,
+          "explosive_type": "Amatol",
+          "explosive_mass": 24.5
+        }
+      },
+      "economy": {
+        "repair_cost": {
+          "ab": 117,
+          "rb": 161,
+          "sb": 113
+        },
+        "crew_training": {
+          "cost": 200,
+          "expert": "1000 SL",
+          "ace": "20 GE",
+          "research_aces": "96,000 RP"
+        },
+        "reward_multiplier": {
+          "SL": {
+            "ab": 0.1,
+            "rb": 0.2,
+            "sb": 0.6
+          },
+          "RP": {
+            "rp": 1.0
+          },
+          "total_cost_of_modifications": {
+            "RP": 2970,
+            "SL": 895
+          },
+          "talisman_cost": {
+            "GE": 190
+          }
+        }
+      },
+      "modifications": {
+        "flight_performance": {
+          "fuselage_repair": {
+            "research": "200 RP",
+            "cost": {
+              "SL": 60,
+              "GE": 40
+            }
+          },
+          "radiator": {
+            "research": "200 RP",
+            "cost": {
+              "SL": 60,
+              "GE": 40
+            }
+          },
+          "compressor": {
+            "research": "330 RP",
+            "cost": {
+              "SL": 100,
+              "GE": 65
+            }
+          },
+          "wings_repair": {
+            "research": "250 RP",
+            "cost": {
+              "SL": 75,
+              "GE": 50
+            }
+          },
+          "engine": {
+            "research": "250 RP",
+            "cost": {
+              "SL": 75,
+              "GE": 50
+            }
+          },
+          "engine_injection": {
+            "research": "480 RP",
+            "cost": {
+              "SL": 145,
+              "GE": 95
+            }
+          }
+        },
+        "survivability": {
+          "airframe": {
+            "research": "330 RP",
+            "cost": {
+              "SL": 100,
+              "GE": 65
+            }
+          },
+          "cover": {
+            "research": "480 RP",
+            "cost": {
+              "SL": 145,
+              "GE": 95
+            }
+          }
+        },
+        "weaponry": {
+          "offensive_7.62mm_belts": {
+            "research": "200 RP",
+            "cost": {
+              "SL": 60,
+              "GE": 40
+            }
+          },
+          "new_7.62mm_mgs": {
+            "research": "250 RP",
+            "cost": {
+              "SL": 75,
+              "GE": 50
+            }
+          }
+        }
+      }
+    }
+  ],
+  "great_britain": [
+    {
+      "id": 1,
+      "aircraftid": "furymk1",
+      "name": "Fury Mk I",
+      "nation": "great_britain",
+      "type": "fighter",
+      "tier": 1,
+      "ratings": {
+        "ab_rating": 1.0,
+        "rb_rating": 1.0,
+        "sb_rating": 1.0
+      },
+      "manufacturer": "Hawker",
+      "update": "Aircraft CBT'",
+      "flight-performance": {
+        "max_speed": {
+          "kmh": 394,
+          "altitude": 4100
+        },
+        "rate_of_climb": 15.7,
+        "turn_time": 16,
+        "max_altitude": 8100,
+        "takeoff_run": 231,
+        "gearbox": {
+          "landing_flaps": false,
+          "take-off_flaps": false,
+          "combat_flaps": false,
+          "airbrake": false,
+          "gear_control": false
+        }
+      },
+      "general_characteristics": {
+        "crew": 1,
+        "engine": "Rolls-Royce Kestrel IIS",
+        "length_m": 8.2,
+        "wingspan_m": 11.8,
+        "wing_loading_kg_m2": 67,
+        "weight": {
+          "base_weight_t": 1.41,
+          "fuel_in_main_tanks_t": 0.16,
+          "endurance": "1h 11m"
+        },
+        "limits": {
+          "max_speed_limit_ias_kmh": 600,
+          "mach_number_limit": 0.75,
+          "g_limit": {
+            "negative": -5,
+            "positive": 11
+          }
+        }
+      },
+      "offensive_armament": {
+        "7.7_mm_Vickers_E_machine_gun": {
+          "ammunition": 1200,
+          "ammo_types": {
+            "default": {
+              "belt-fitting": "T, AP, IAI, AP, I",
+              "penetration": {
+                "10m": 13,
+                "100m": 12,
+                "500m": 7,
+                "1000m": 3,
+                "1500m": 2,
+                "2000m": 0
+              }
+            },
+            "universal": {
+              "belt-fitting": "T, AP, IAI, AP",
+              "penetration": {
+                "10m": 13,
+                "100m": 12,
+                "500m": 7,
+                "1000m": 3,
+                "1500m": 2,
+                "2000m": 0
+              }
+            },
+            "tracers": {
+              "belt-fitting": "T, T, T, AP",
+              "penetration": {
+                "10m": 13,
+                "100m": 12,
+                "500m": 7,
+                "1000m": 3,
+                "1500m": 2,
+                "2000m": 0
+              }
+            },
+            "stealth": {
+              "belt-fitting": "I, AP, AP, AP, IAI",
+              "penetration": {
+                "10m": 13,
+                "100m": 12,
+                "500m": 7,
+                "1000m": 3,
+                "1500m": 2,
+                "2000m": 0
+              }
+            }
+          },
+          "fire_rate": 900,
+          "one_second_burst_mass": 0.15
+        }
+      },
+      "economy": {
+        "repair_cost": {
+          "ab": 0,
+          "rb": 0,
+          "sb": 0
+        },
+        "crew_training": {
+          "cost": 0,
+          "expert": "1000 SL",
+          "ace": "10 GE",
+          "research_aces": "80,000 RP"
+        },
+        "reward_multiplier": {
+          "SL": {
+            "ab": 0.1,
+            "rb": 0.1,
+            "sb": 0.5
+          },
+          "RP": {
+            "rp": 1.0
+          },
+          "total_cost_of_modifications": {
+            "RP": 2690,
+            "SL": 123
+          },
+          "talisman_cost": {
+            "GE": 190
+          }
+        }
+      },
+      "modifications": {
+        "flight_performance": {
+          "fuselage_repair": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          },
+          "radiator": {
+            "research": "440 RP",
+            "cost": {
+              "SL": 19,
+              "GE": 30
+            }
+          },
+          "compressor": {
+            "research": "500 RP",
+            "cost": {
+              "SL": 25,
+              "GE": 35
+            }
+          },
+          "wings_repair": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          },
+          "engine": {
+            "research": "810 RP",
+            "cost": {
+              "SL": 35,
+              "GE": 55
+            }
+          }
+        },
+        "survivability": {
+          "airframe": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          },
+          "cover": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          }
+        },
+        "weaponry": {
+          "offensive_7.7mm_belts": {
+            "research": "440 RP",
+            "cost": {
+              "SL": 19,
+              "GE": 30
+            }
+          },
+          "new_7.7mm_mgs": {
+            "research": "500 RP",
+            "cost": {
+              "SL": 25,
+              "GE": 35
+            }
+          }
+        }
+      }
+    }
+  ]
+}
