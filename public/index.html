@@ -4,16 +4,289 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>War Thunder API</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="https://media.printables.com/media/prints/852559/images/6557322_27c4a7b3-e480-40d4-9b62-10c9f5570d24_7d21314a-1720-45d8-ba5a-77c27f44d9fe/thumbs/inside/1280x960/png/wt1.webp" type="image/x-icon">
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        background: #fafafa;
+        color: #222;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #1e1e1e;
+        padding: 10px 20px;
+      }
+
+      nav a {
+        color: white;
+        margin-left: 20px;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      nav a:hover {
+        color: #ddd;
+      }
+
+      nav img {
+        height: 40px;
+        cursor: pointer;
+      }
+
+      .banner {
+        text-align: center;
+        padding: 40px 20px;
+        background: linear-gradient(120deg, #900, #600);
+        color: white;
+      }
+
+      .banner h1 {
+        margin: 0 0 10px 0;
+      }
+
+      .banner p {
+        margin: 0;
+        opacity: 0.9;
+      }
+
+      .banner-bottom {
+        text-align: center;
+        padding: 15px 30px;
+        background: #fff5f5;
+        color: #222;
+      }
+
+      .banner-bottom p {
+        margin: 0;
+        line-height: 1.6;
+      }
+
+      main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+        padding: 30px;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .links {
+        flex: 1;
+        min-width: 320px;
+        max-width: 700px;
+      }
+
+      .info {
+        flex: 1;
+        min-width: 320px;
+        max-width: 600px;
+      }
+
+      .api-input-container {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: #fff;
+        border-radius: 8px;
+        padding: 12px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .api-base {
+        color: #888;
+        font-family: 'Courier New', monospace;
+        font-size: 14px;
+        white-space: nowrap;
+      }
+
+      .api-path-input {
+        flex: 1;
+        padding: 8px 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-family: 'Courier New', monospace;
+        font-size: 14px;
+        transition: border-color 0.2s;
+      }
+
+      .api-path-input:focus {
+        outline: none;
+        border-color: #900;
+      }
+
+      .api-submit-btn {
+        background: #900;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: background 0.2s;
+      }
+
+      .api-submit-btn:hover {
+        background: #b00;
+      }
+
+      .api-copy-btn {
+        border: none;
+        background: none;
+        cursor: pointer;
+        padding: 4px;
+        opacity: 0.7;
+        transition: opacity 0.2s;
+      }
+
+      .api-copy-btn:hover {
+        opacity: 1;
+      }
+
+      .help {
+        font-size: 14px;
+        background: #f4f4f4;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        border-left: 4px solid #900;
+      }
+
+      .help p {
+        margin: 0 0 10px 0;
+        font-weight: 500;
+      }
+
+      .help ul {
+        margin: 0;
+        padding-left: 20px;
+      }
+
+      .help li {
+        margin: 8px 0;
+      }
+
+      .help code {
+        background: #e0e0e0;
+        padding: 3px 6px;
+        border-radius: 4px;
+        font-family: 'Courier New', monospace;
+        font-size: 13px;
+      }
+
+      .data-display {
+        background: #ffffff;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 20px;
+        font-family: 'Courier New', monospace;
+        font-size: 13px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        max-height: 600px;
+        overflow: auto;
+        min-height: 200px;
+      }
+
+      .data-display:empty::before {
+        content: "API response will appear here...";
+        color: #999;
+        font-style: italic;
+      }
+
+      /* JSON Styling */
+      .json-container {
+        line-height: 1.6;
+      }
+
+      .json-key {
+        color: #0451a5;
+        font-weight: 500;
+      }
+
+      .json-string {
+        color: #a31515;
+      }
+
+      .json-number {
+        color: #098658;
+      }
+
+      .json-boolean {
+        color: #0000ff;
+      }
+
+      .json-null {
+        color: #808080;
+      }
+
+      pre {
+        margin: 0;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+      }
+
+      .footer {
+        text-align: center;
+        padding: 20px;
+        background: #1e1e1e;
+        color: white;
+        margin-top: 30px;
+      }
+
+      .footer p {
+        margin: 0;
+      }
+
+      .loading {
+        color: #900;
+        font-style: italic;
+      }
+
+      .error {
+        color: #d00;
+        padding: 15px;
+        background: #fee;
+        border-radius: 6px;
+        border-left: 4px solid #d00;
+      }
+
+      @media (max-width: 768px) {
+        .api-input-container {
+          flex-wrap: wrap;
+        }
+
+        .api-base {
+          width: 100%;
+          margin-bottom: 5px;
+        }
+
+        nav {
+          flex-direction: column;
+          gap: 10px;
+        }
+      }
+    </style>
   </head>
+
   <body>
     <nav>
       <div>
-        <button onclick="window.location.href='/'">
-          <img src="/logo.png" alt="Logo" style="height: 40px" />
-        </button>
+        <img 
+          src="https://media.printables.com/media/prints/852559/images/6557322_27c4a7b3-e480-40d4-9b62-10c9f5570d24_7d21314a-1720-45d8-ba5a-77c27f44d9fe/thumbs/inside/1280x960/png/wt1.webp" 
+          alt="War Thunder Logo"
+          onclick="window.location.href='/'"
+        />
       </div>
-
       <div>
         <a href="/">Home</a>
         <a href="/about">About</a>
@@ -21,7 +294,6 @@
     </nav>
 
     <div class="banner">
-      <img src="" alt="" />
       <h1>The War Thunder API</h1>
       <p>Serving less than 1 call each month!</p>
     </div>
@@ -43,65 +315,50 @@
             class="api-path-input"
             id="apiPath"
             type="text"
-            value="f3f"
+            value="vehicles/aviation/aircraft/usa/p-26a-34m2"
             aria-label="API Path"
           />
-          <button class="api-copy-btn" type="button" id="copyBtn" title="Copy">
+          <button
+            class="api-copy-btn"
+            type="button"
+            id="copyBtn"
+            title="Copy URL"
+          >
             <img
               src="https://img.icons8.com/material-outlined/24/000000/copy.png"
               alt="Copy"
+              width="20"
+              height="20"
             />
           </button>
           <button class="api-submit-btn" type="submit">Submit</button>
         </form>
 
         <div class="help">
-          <p>Need a hint? Try the following API endpoints:</p>
+          <p>Need a hint? Try these endpoints:</p>
           <ul>
             <li><code>vehicles/aviation</code> — List all aircraft</li>
-            <li>
-              <code>vehicles/aviation/aircraft</code> — Details for a specific
-              aircraft
-            </li>
-            <li>
-              <code>vehicles/aviation/helicopters</code> — List all helicopters
-            </li>
-            <li>
-              <code>vehicles/aviation/helicopters/:id</code> — Details for a
-              specific helicopter
-            </li>
-            <li>
-              <code>vehicles/aviation/aircraft/:id</code> — Details for a
-              specific aircraft
-            </li>
-            <li><code>/nations</code> — List all playable nations</li>
+            <li><code>vehicles/aviation/aircraft/:id</code> — Aircraft details</li>
+            <li><code>vehicles/aviation/helicopters</code> — List helicopters</li>
+            <li><code>nations</code> — List all playable nations</li>
           </ul>
-          <p>
-            Direct link example:
-            <a href="http://localhost:5000/aviation/aircraft" target="_blank">
-              http://localhost:5000/aviation/aircraft
-            </a>
-          </p>
         </div>
 
-        <div class="data-display" id="dataDisplay">
-          <!-- API results will be displayed here -->
-        </div>
+        <div class="data-display" id="dataDisplay"></div>
       </div>
 
       <div class="info">
         <h2>What is this?</h2>
         <p>
-          This is a full RESTful API linked to an extensive database detailing
-          everything about the War Thunder game series. We've covered everything
-          from aircraft to vehicles and weapons.
+          This is a RESTful API linked to a comprehensive database detailing
+          everything about the War Thunder series — aircraft, vehicles, and
+          weapons.
         </p>
 
         <h2>Where do I start?</h2>
         <p>
-          We have awesome documentation on how to use this API. It takes minutes
-          to get started. This API will always be publicly available and will
-          never require any extensive setup process to consume.
+          You can directly query this API using any HTTP client or browser.
+          It's designed to be public, simple, and fast.
         </p>
       </div>
     </main>
@@ -119,22 +376,47 @@
       const copyBtn = document.getElementById("copyBtn");
       const dataDisplay = document.getElementById("dataDisplay");
 
+      // Syntax highlighting for JSON
+      function syntaxHighlight(json) {
+        json = JSON.stringify(json, null, 2);
+        json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
+          let cls = 'json-number';
+          if (/^"/.test(match)) {
+            if (/:$/.test(match)) {
+              cls = 'json-key';
+            } else {
+              cls = 'json-string';
+            }
+          } else if (/true|false/.test(match)) {
+            cls = 'json-boolean';
+          } else if (/null/.test(match)) {
+            cls = 'json-null';
+          }
+          return '<span class="' + cls + '">' + match + '</span>';
+        });
+      }
+
       form.addEventListener("submit", async (e) => {
         e.preventDefault();
         const baseURL = "http://localhost:5000/api/";
         const endpoint = apiPathInput.value.trim();
         const fullURL = baseURL + endpoint;
 
-        dataDisplay.innerHTML = "<p>Loading...</p>";
+        dataDisplay.innerHTML = '<p class="loading">Loading...</p>';
 
         try {
           const res = await fetch(fullURL);
-          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          if (!res.ok) {
+            throw new Error(`HTTP ${res.status}: ${res.statusText}`);
+          }
           const data = await res.json();
 
-          dataDisplay.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+          // Display formatted JSON with syntax highlighting
+          const highlighted = syntaxHighlight(data);
+          dataDisplay.innerHTML = `<pre class="json-container">${highlighted}</pre>`;
         } catch (err) {
-          dataDisplay.innerHTML = `<p style="color:red;">Error: ${err.message}</p>`;
+          dataDisplay.innerHTML = `<div class="error"><strong>Error:</strong> ${err.message}</div>`;
         }
       });
 
@@ -142,10 +424,15 @@
         const fullURL = `http://localhost:5000/api/${apiPathInput.value.trim()}`;
         try {
           await navigator.clipboard.writeText(fullURL);
+          const originalTitle = copyBtn.title;
           copyBtn.title = "Copied!";
-          setTimeout(() => (copyBtn.title = "Copy"), 1500);
+          copyBtn.style.opacity = "1";
+          setTimeout(() => {
+            copyBtn.title = originalTitle;
+            copyBtn.style.opacity = "0.7";
+          }, 1500);
         } catch {
-          alert("Failed to copy URL.");
+          alert("Failed to copy URL to clipboard.");
         }
       });
     </script>

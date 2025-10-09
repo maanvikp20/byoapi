@@ -1,0 +1,45 @@
+{
+  "description": "WT API - For all vehicles",
+  "paths": {
+    "/nations": {
+      "get": "Summary of all nations with vehicle counts",
+      "get /:nation": "Details of a specific nation by ID"
+    },
+    "/vehicles": {
+      "/aviation": {
+        "/:nation": "Get all aviation vehicles for a nation",
+        "/aircraft": {
+          "get": "List all aircraft",
+          "get /:nation": "List aircraft by nation",
+          "get /:nation/:id": "Details of a specific aircraft by ID"
+        },
+        "/helicopters": {
+          "get": "List all helicopters",
+          "get /:nation": "List helicopters by nation",
+          "get /:nation/:id": "Details of a specific helicopter by ID"
+        }
+      },
+      "/ground": {
+        "/tanks": {
+          "get": "List all tanks",
+          "get /:nation": "List tanks by nation",
+          "get /:nation/:id": "Details of a specific tank by ID"
+        }
+      },
+      "/naval": {
+        "/bluewater": {
+          "get": "List all bluewater ships",
+          "get /:nation": "List bluewater ships by nation",
+          "get /:nation/:id": "Details of a specific bluewater ship by ID"
+        },
+        "/coastal": {
+          "get": "List all coastal ships",
+          "get /:nation": "List coastal ships by nation",
+          "get /:nation/:id": "Details of a specific coastal ship by ID"
+        }
+      }
+    },
+    "version": "1.0.0",
+    "last_updated": "202-10-09"
+  }
+}

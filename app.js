@@ -83,6 +83,15 @@ app.get("/about", (req, res) => {
 });
 
 /* ============================================
+ *  API DOCUMENTATION ROUTE
+ * ============================================ */
+app.get("/api", (req, res) => {
+  const apiDoc = loadJSON("data/api.json");
+  if (!apiDoc) return res.status(500).json({ error: "API documentation not available" });
+  res.json(apiDoc);
+});
+
+/* ============================================
  *  NATION ROUTES
  * ============================================ */
 
@@ -124,6 +133,26 @@ app.get("/api/vehicles/aviation", (req, res) => {
   });
 });
 
+app.get("/api/vehicles/aviation/aircraft", (req, res) => {
+  const { aircraft = {} } = dataCache.vehicles;
+  const allAircraft = Object.values(aircraft).flat();
+
+  res.json({
+    total: allAircraft.length,
+    aircraft: allAircraft,
+  });
+});
+
+app.get("/api/vehicles/aviation/helicopters", (req, res) => {
+  const { helicopters = {} } = dataCache.vehicles;
+  const allHelicopters = Object.values(helicopters).flat();
+
+  res.json({
+    total: allHelicopters.length,
+    helicopters: allHelicopters,
+  });
+});
+
 // Aviation by nation
 app.get("/api/vehicles/aviation/:nation", (req, res) => {
   const { nation } = req.params;
@@ -159,13 +188,6 @@ app.get("/api/vehicles/aviation/:nation", (req, res) => {
 /* ============================================
  *  AIRCRAFT ROUTES
  * ============================================ */
-
-// All aircraft
-app.get("/api/vehicles/aviation/aircraft", (req, res) => {
-  const { aircraft } = dataCache.vehicles;
-  if (!aircraft) return res.status(500).json({ error: "Aircraft data not loaded" });
-  res.json(aircraft);
-});
 
 // Aircraft by nation
 app.get("/api/vehicles/aviation/aircraft/:nation", (req, res) => {
@@ -209,13 +231,6 @@ app.get("/api/vehicles/aviation/aircraft/:nation/:identifier", (req, res) => {
 /* ============================================
  *  HELICOPTER ROUTES
  * ============================================ */
-
-// All helicopters
-app.get("/api/vehicles/aviation/helicopters", (req, res) => {
-  const { helicopters } = dataCache.vehicles;
-  if (!helicopters) return res.status(500).json({ error: "Helicopters data not loaded" });
-  res.json(helicopters);
-});
 
 // Helicopters by nation
 app.get("/api/vehicles/aviation/helicopters/:nation", (req, res) => {
