@@ -219,5 +219,165 @@
         }
       }
     }
+  ],
+  "germany": [
+    {
+      "id": 1,
+      "helicopterid": "sa313balouetteii",
+      "name": "SA 313 Alouette II",
+      "nation": "Germany",
+      "type": "Utility Helicopter",
+      "tier": 4,
+      "ratings": {
+        "ab_rating": 8.7,
+        "rb_rating": 8.3,
+        "sb_rating": 8.7
+      },
+      "manufacturer": "Aerospatiale",
+      "update": "Update 1.83 'Masters of the Sea'",
+      "flight_performance": {
+        "max_speed": {
+          "kmh": 185,
+          "altitude": 0
+        },
+        "rate_of_climb": 4.2,
+        "max_altitude": 2300
+      },
+      "general_characteristics": {
+        "crew": 2,
+        "engine": "Turbomeca Artouste IIC6",
+        "main-rotor_diameter": 10.2,
+        "weight": {
+          "base_weight_t": 1.08,
+          "fuel_in_main_tanks_t": 0.44,
+          "endurance": "2h 19m"
+        }
+      },
+      "offensive_armament": {
+        "7.62_mm_MG3_machine_gun": {
+          "ammunition": 1000,
+          "ammo_types": {
+            "default": {
+              "belt_filling": "T, AP, AP, AP, AP",
+              "penetration": {
+                "10m": 13,
+                "100m": 12,
+                "500m": 7,
+                "1000m": 3,
+                "1500m": 2,
+                "2000m": 0
+              }
+            }
+          },
+          "fire_rate": 1200,
+          "one_second_burst_mass": 0.21
+        }
+      },
+      "suspended_armament": {
+        "weapons": {
+          "AS.11_missiles": {
+            "penetration": 600,
+            "caliber": 164,
+            "projectile_mass": 30,
+            "fuze_delay": 0.05,
+            "fuze_sensitivity": 0.1,
+            "guidance": "Semi-Automatic (SACLOS)",
+            "maximum_speed": 220,
+            "firing_range": 3.5,
+            "missile_guidance_time": 18.5,
+            "explosive_type": "Composition B",
+            "explosive_mass": 1.5,
+            "tnt_equivalent": 2
+          }
+        }
+      },
+      "economy": {
+        "repair_cost": {
+          "ab": 9954,
+          "rb": 2938,
+          "sb": 4952
+        },
+        "crew_training": {
+          "cost": 110000,
+          "expert": "390000 SL",
+          "ace": "1700 GE",
+          "research_aces": "720000 RP"
+        },
+        "reward_multiplier": {
+          "SL": {
+            "ab": 1,
+            "rb": 3,
+            "sb": 4.3
+          },
+          "RP": {
+            "rp": 1.96
+          },
+          "total_cost_of_modifications": {
+            "RP": 113800,
+            "SL": 210000
+          },
+          "talisman_cost": {
+            "GE": 2100
+          }
+        }
+      },
+      "modifications": {
+        "flight_performance": {
+          "compressor": {
+            "research": "7600 RP",
+            "cost": {
+              "SL": 14000,
+              "GE": 155
+            }
+          },
+          "replacing_helicopter_blades": {
+            "research": "13000 RP",
+            "cost": {
+              "SL": 24000,
+              "GE": 260
+            }
+          },
+          "engine": {
+            "research": "28000 RP",
+            "cost": {
+              "SL": 52000,
+              "GE": 560
+            }
+          }
+        },
+        "survivability": {
+          "flak_jacket": {
+            "research": "7600 RP",
+            "cost": {
+              "SL": 14000,
+              "GE": 155
+            }
+          },
+          "helicopter_frame": {
+            "research": "13000 RP",
+            "cost": {
+              "SL": 24000,
+              "GE": 260
+            }
+          },
+          "cover": {
+            "research": "37000 RP",
+            "cost": {
+              "SL": 68000,
+              "GE": 750
+            }
+          }
+        },
+        "weaponry": {
+          "new_7.62mm_mgs": {
+            "research": "7600 RP",
+            "cost": {
+              "SL": 14000,
+              "GE": 155
+            }
+          }
+        }
+      }
+    }
   ]
 }

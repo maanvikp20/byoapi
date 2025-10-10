@@ -1,0 +1,288 @@
+{
+  "usa":[
+    {
+      "id": 1,
+      "helicopterid": "usslitchfield",
+      "name": "USS Litchfield",
+      "nation": "USA",
+      "type": "Destroyer",
+      "tier": 1,
+      "ratings": {
+        "ab_rating": 3.3,
+        "rb_rating": 3.3
+      },
+      "manufacturer": "N/A",
+      "update": "Update 1.79 'Project X'",
+      "specification": {
+        "armour": {
+          "hull": 16,
+          "superstructure": 4
+        },
+        "number_of_sections": 7,
+        "displacement": 1699,
+        "crew": 150,
+        "max_speed": {
+          "forward": 65,
+          "backward": 22
+        }
+      },
+      "armament": {
+        "primary_armament": {
+          "4_inch/50_mk.9_naval_gun": {
+            "ammunition": 1200,
+            "ammo_types": {
+              "4_inch_HC_Mk.15": {
+                "type": "HE",
+                "caliber": 102,
+                "projectile_mass": 15,
+                "muzzle_velocity": 884,
+                "fuze_delay": 0.001,
+                "fuze_sensitivity": 0.1,
+                "explosive_type": "Exp. D",
+                "explosive_mass": 1.2,
+                "tnt_equivalent": 1.2,
+                "penetration": {
+                  "10m": 22,
+                  "100m": 17,
+                  "500m": 16,
+                  "1000m": 16,
+                  "1500m": 16,
+                  "2000m": 16
+                }
+              },
+              "4_inch_sp_common": {
+                "type": "SP Common",
+                "caliber": 102,
+                "projectile_mass": 15,
+                "muzzle_velocity": 884,
+                "fuze_delay": 0.01,
+                "fuze_sensitivity": 5,
+                "explosive_type": "Exp. D",
+                "explosive_mass": 0.53,
+                "tnt_equivalent": 0.519,
+                "penetration": {
+                  "10m": 100,
+                  "100m": 80,
+                  "500m": 52,
+                  "1000m": 34,
+                  "1500m": 26,
+                  "2000m": 25
+                }
+              },
+              "4_inch_HC_Mk.15_base_fuze": {
+                "type": "HE",
+                "caliber": 102,
+                "projectile_mass": 15,
+                "muzzle_velocity": 884,
+                "fuze_delay": 0.015,
+                "fuze_sensitivity": 0.1,
+                "explosive_type": "Exp. D",
+                "explosive_mass": 1.2,
+                "tnt_equivalent": 1.2,
+                "penetration": {
+                  "10m": 51,
+                  "100m": 41,
+                  "500m": 27,
+                  "1000m": 17,
+                  "1500m": 16,
+                  "2000m": 16
+                }
+              }
+            }
+          }
+        },
+        "secondary_armament": {
+          "3_inch/23_Mk.4_naval_gun": {
+            "ammunition": 350,
+            "ammo_types": {
+              "3_inch_AA_Mk.26": {
+                "type": "HE-TF",
+                "caliber": 76.2,
+                "projectile_mass": 5.9,
+                "muzzle_velocity": 503,
+                "fuze_delay": 0.001,
+                "fuze_sensitivity": 0.1,
+                "explosive_type": "TNT",
+                "explosive_mass": 0.34,
+                "penetration": {
+                  "10m": 7,
+                  "100m": 7,
+                  "500m": 7,
+                  "1000m": 7,
+                  "1500m": 7,
+                  "2000m": 7
+                }
+              },
+              "3_inch_common_Mk.3": {
+                "type": "Common",
+                "caliber": 76.2,
+                "projectile_mass": 5.9,
+                "muzzle_velocity": 503,
+                "fuze_delay": 0.01,
+                "fuze_sensitivity": 4,
+                "explosive_type": "TNT",
+                "explosive_mass": 0.62,
+                "penetration": {
+                  "10m": 58,
+                  "100m": 49,
+                  "500m": 42,
+                  "1000m": 37,
+                  "1500m": 34,
+                  "2000m": 31
+                }
+              }
+            }
+          }
+        }
+      },
+      "economy": {
+        "repair_cost": {
+          "ab": 0,
+          "rb": 0
+        },
+        "crew_training": {
+          "cost": 0,
+          "expert": "1000 SL",
+          "ace": "10 GE",
+          "research_aces": "80000 RP"
+        },
+        "reward_multiplier": {
+          "SL": {
+            "ab": 0.2,
+            "rb": 0.3
+          },
+          "RP": {
+            "rp": 1
+          },
+          "total_cost_of_modifications": {
+            "RP": 3880,
+            "SL": 177
+          },
+          "talisman_cost": {
+            "GE": 190
+          }
+        }
+      },
+      "modifications": {
+        "seakeeping": {
+          "dry-docking": {
+            "research": "440 RP",
+            "cost": {
+              "SL": 19,
+              "GE": 55
+            }
+          },
+          "rudder_replacement": {
+            "research": "300 RP",
+            "cost": {
+              "SL": 13,
+              "GE": 35
+            }
+          },
+          "propeller_replacement": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          },
+          "engine_maintenance": {
+            "research": "720 RP",
+            "cost": {
+              "SL": 35,
+              "GE": 90
+            }
+          }
+        },
+        "unsinkability": {
+          "damage_control_division": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          },
+          "fire_division": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          },
+          "smokescreen": {
+            "research": "300 RP",
+            "cost": {
+              "SL": 13,
+              "GE": 35
+            }
+          },
+          "ventilation": {
+            "research": "330 RP",
+            "cost": {
+              "SL": 15,
+              "GE": 40
+            }
+          },
+          "shrapnel_protection": {
+            "research": "330 RP",
+            "cost": {
+              "SL": 15,
+              "GE": 40
+            }
+          },
+          "new_pumps": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          },
+          "ammo_wetting": {
+            "research": "720 RP",
+            "cost": {
+              "SL": 35,
+              "GE": 90
+            }
+          }
+        },
+        "firepower": {
+          "4_inch_sp_common": {
+            "research": "440 RP",
+            "cost": {
+              "SL": 19,
+              "GE": 55
+            }
+          },
+          "auxilary_armanent_targeting": {
+            "research":"0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          },
+          "4_inch_hc_mk.15_base_fuze": {
+            "research":"300 RP",
+            "cost": {
+              "SL": 13,
+              "GE": 35
+            }
+          },
+          "primary_armament_targeting": {
+            "research":"0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          },
+          "improved_rangefinder": {
+            "research":"0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -97,47 +97,273 @@ function preloadData() {
   }
 }
 
-/** Generate next ID for a nation's aircraft */
-const getNextAircraftId = (nation) => {
-  const nationAircraft = dataCache.vehicles.aircraft[nation] || [];
-  if (nationAircraft.length === 0) return 1;
-  return Math.max(...nationAircraft.map(a => a.id || 0)) + 1;
+/** Determine file path for each vehicle collection */
+const filePathForCategory = {
+  aircraft: "data/vehicles/aviation/aircraft.json",
+  helicopters: "data/vehicles/aviation/helicopters.json",
+  tanks: "data/vehicles/ground/tanks.json",
+  bluewater: "data/vehicles/naval/bluewater.json",
+  coastal: "data/vehicles/naval/coastal.json",
 };
 
-/** Validate aircraft data */
-const validateAircraftData = (data, isUpdate = false) => {
+/** Determine unique id field name per category */
+const idFieldForCategory = {
+  aircraft: "aircraftid",
+  helicopters: "helicopterid",
+  tanks: "tankid",
+  bluewater: "shipid",
+  coastal: "shipid",
+};
+
+/** Generate next numeric ID for a nation in a given category */
+const getNextIdForCategory = (category, nation) => {
+  const collection = dataCache.vehicles[category] || {};
+  const nationItems = collection[nation] || [];
+  if (!Array.isArray(nationItems) || nationItems.length === 0) return 1;
+  return Math.max(...nationItems.map(i => i.id || 0)) + 1;
+};
+
+/** Generic validation for create/update.
+ *  For create: require idField and name.
+ *  For update: optional but validate types (rank, br, crew).
+ */
+const validateGenericData = (category, data, isUpdate = false) => {
   const errors = [];
-  
+  const idField = idFieldForCategory[category] || "id_field";
+
   if (!isUpdate) {
-    if (!data.aircraftid || typeof data.aircraftid !== 'string' || data.aircraftid.trim() === '') {
-      errors.push('aircraftid is required and must be a non-empty string');
+    if (!data[idField] || typeof data[idField] !== 'string' || data[idField].trim() === '') {
+      errors.push(`${idField} is required and must be a non-empty string`);
     }
     if (!data.name || typeof data.name !== 'string' || data.name.trim() === '') {
       errors.push('name is required and must be a non-empty string');
     }
   }
-  
-  // Optional field validations
+
+  // Optional numeric validations (if present)
   if (data.rank !== undefined && (typeof data.rank !== 'number' || data.rank < 1 || data.rank > 8)) {
     errors.push('rank must be a number between 1 and 8');
   }
-  
   if (data.br !== undefined && (typeof data.br !== 'number' || data.br < 1.0 || data.br > 15.0)) {
     errors.push('br (battle rating) must be a number between 1.0 and 15.0');
   }
-  
   if (data.crew !== undefined && (typeof data.crew !== 'number' || data.crew < 1)) {
     errors.push('crew must be a positive number');
   }
-  
+
   return errors;
 };
 
 /* ============================================
- *  ROUTES
+ *  ROUTE FACTORY - to avoid repetition
+ *  Produces nation-scoped CRUD endpoints for a category
  * ============================================ */
 
-/* ---------- PAGE ROUTES ---------- */
+const mountCRUDForCategory = (category, opts = {}) => {
+  const basePath = `/api/vehicles/${opts.group || category}/${category}`;
+
+  // GET all (flattened) with optional search + pagination
+  app.get(`${basePath}`, (req, res) => {
+    const collection = dataCache.vehicles[category] || {};
+    let allItems = Object.values(collection).flat();
+
+    const q = req.query.q;
+    if (q) {
+      const query = q.toLowerCase();
+      allItems = allItems.filter(i =>
+        (i.name && i.name.toLowerCase().includes(query)) ||
+        (i[idFieldForCategory[category]] && i[idFieldForCategory[category]].toLowerCase().includes(query)) ||
+        (i.nation && i.nation.toLowerCase().includes(query))
+      );
+    }
+
+    const page = Math.max(1, parseInt(req.query.page) || 1);
+    const limit = Math.min(100, Math.max(1, parseInt(req.query.limit) || 50));
+    const startIndex = (page - 1) * limit;
+    const paginated = allItems.slice(startIndex, startIndex + limit);
+
+    res.json({
+      total: allItems.length,
+      page,
+      limit,
+      totalPages: Math.ceil(allItems.length / limit),
+      [category]: paginated
+    });
+  });
+
+  // GET by nation
+  app.get(`${basePath}/:nation`, (req, res) => {
+    const { nation } = req.params;
+    const collection = dataCache.vehicles[category];
+
+    if (!collection)
+      return res.status(500).json({ error: { message: `${category} data not loaded`, details: null } });
+
+    const nationItems = collection[nation];
+    if (!nationItems)
+      return res.status(404).json({
+        error: {
+          message: `No ${category} found for nation: ${nation}`,
+          details: { available_nations: Object.keys(collection || {}) }
+        }
+      });
+
+    res.json({ nation, count: nationItems.length, [category]: nationItems });
+  });
+
+  // GET specific by nation + id or numeric id
+  app.get(`${basePath}/:nation/:identifier`, (req, res) => {
+    const { nation, identifier } = req.params;
+    const collection = dataCache.vehicles[category];
+    if (!collection) return res.status(500).json({ error: { message: `${category} data not loaded`, details: null } });
+
+    const nationItems = collection[nation];
+    if (!nationItems) return res.status(404).json({ error: { message: `Nation not found: ${nation}`, details: null } });
+
+    const isNumeric = !isNaN(identifier);
+    const searchId = isNumeric ? parseInt(identifier) : identifier;
+    const idField = idFieldForCategory[category];
+
+    const item = nationItems.find(i => i[idField] === identifier || i.id === searchId) || null;
+
+    if (!item) return res.status(404).json({
+      error: {
+        message: `${category.slice(0, -1)} not found with identifier: ${identifier}`,
+        details: `Use either ${idField} (string) or numeric id`
+      }
+    });
+
+    res.json(item);
+  });
+
+  // POST - create new in nation
+  app.post(`${basePath}/:nation`, async (req, res) => {
+    const { nation } = req.params;
+    const collection = dataCache.vehicles[category];
+
+    if (!collection) return res.status(500).json({ error: { message: `${category} data not loaded`, details: null } });
+
+    if (!collection[nation]) collection[nation] = [];
+
+    const idField = idFieldForCategory[category];
+    const { [idField]: incomingId, name } = req.body;
+
+    // Basic required checks (mirrors validateGenericData but clearer for create)
+    if (!incomingId || typeof incomingId !== 'string' || incomingId.trim() === '' || !name || typeof name !== 'string' || name.trim() === '') {
+      return res.status(400).json({
+        error: {
+          message: "Missing required fields",
+          details: `Both '${idField}' and 'name' are required and must be non-empty strings`
+        }
+      });
+    }
+
+    // Duplicate check
+    const exists = collection[nation].find(i => i[idField] === incomingId);
+    if (exists) {
+      return res.status(409).json({
+        error: { message: `${category.slice(0, -1)} already exists`, details: `An item with '${idField}' '${incomingId}' already exists in ${nation}` }
+      });
+    }
+
+    // create
+    const newItem = {
+      id: getNextIdForCategory(category, nation),
+      nation,
+      ...req.body
+    };
+
+    collection[nation].push(newItem);
+
+    const saved = await saveJSON(filePathForCategory[category], collection);
+    if (!saved) {
+      // rollback
+      collection[nation].pop();
+      return res.status(500).json({ error: { message: `Failed to save ${category}`, details: null } });
+    }
+
+    console.log(`✅ Created ${category.slice(0, -1)}: ${incomingId} in ${nation}`);
+    res.status(201).json(newItem);
+  });
+
+  // PATCH - update
+  app.patch(`${basePath}/:nation/:identifier`, async (req, res) => {
+    const { nation, identifier } = req.params;
+    const collection = dataCache.vehicles[category];
+
+    if (!collection || !collection[nation]) return res.status(404).json({ error: { message: `Nation not found: ${nation}`, details: null } });
+
+    // validate update body
+    const validationErrors = validateGenericData(category, req.body, true);
+    if (validationErrors.length > 0) {
+      return res.status(400).json({ error: { message: "Validation failed", details: validationErrors } });
+    }
+
+    const nationItems = collection[nation];
+    const isNumeric = !isNaN(identifier);
+    const searchId = isNumeric ? parseInt(identifier) : identifier;
+    const idField = idFieldForCategory[category];
+
+    const index = nationItems.findIndex(i => i[idField] === identifier || i.id === searchId);
+    if (index === -1) return res.status(404).json({ error: { message: `${category.slice(0, -1)} not found with identifier: ${identifier}`, details: null } });
+
+    const original = { ...nationItems[index] };
+
+    // Merge updates but preserve id, nation, and idField (unique string id)
+    const updated = {
+      ...nationItems[index],
+      ...req.body,
+      id: nationItems[index].id,
+      nation: nationItems[index].nation,
+      [idField]: nationItems[index][idField]
+    };
+
+    nationItems[index] = updated;
+
+    const saved = await saveJSON(filePathForCategory[category], collection);
+    if (!saved) {
+      // rollback
+      nationItems[index] = original;
+      return res.status(500).json({ error: { message: `Failed to update ${category.slice(0, -1)}`, details: null } });
+    }
+
+    console.log(`✅ Updated ${category.slice(0, -1)}: ${identifier} in ${nation}`);
+    res.json(updated);
+  });
+
+  // DELETE - remove item
+  app.delete(`${basePath}/:nation/:identifier`, async (req, res) => {
+    const { nation, identifier } = req.params;
+    const collection = dataCache.vehicles[category];
+
+    if (!collection || !collection[nation]) return res.status(404).json({ error: { message: `Nation not found: ${nation}`, details: null } });
+
+    const nationItems = collection[nation];
+    const isNumeric = !isNaN(identifier);
+    const searchId = isNumeric ? parseInt(identifier) : identifier;
+    const idField = idFieldForCategory[category];
+
+    const index = nationItems.findIndex(i => i[idField] === identifier || i.id === searchId);
+    if (index === -1) return res.status(404).json({ error: { message: `${category.slice(0, -1)} not found with identifier: ${identifier}`, details: null } });
+
+    const deleted = nationItems.splice(index, 1)[0];
+
+    const saved = await saveJSON(filePathForCategory[category], collection);
+    if (!saved) {
+      // rollback
+      nationItems.splice(index, 0, deleted);
+      return res.status(500).json({ error: { message: `Failed to delete ${category.slice(0, -1)}`, details: null } });
+    }
+
+    console.log(`✅ Deleted ${category.slice(0, -1)}: ${identifier} from ${nation}`);
+    // send 204 (no content) to match aircraft behavior
+    res.status(204).send();
+  });
+};
+
+/* ============================================
+ *  PAGE ROUTES
+ * ============================================ */
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
@@ -189,276 +415,22 @@ app.get("/api/nations/:id", (req, res) => {
 });
 
 /* ============================================
- *  AIRCRAFT ROUTES (FULL CRUD)
+ *  MOUNT CRUD FOR EACH CATEGORY
+ *  - aircraft already exists in your original and had specific routes;
+ *    but for consistency we mount CRUD for each category using the factory.
  * ============================================ */
 
-// GET all aircraft (with pagination and search)
-app.get("/api/vehicles/aviation/aircraft", (req, res) => {
-  const { aircraft = {} } = dataCache.vehicles;
-  let allAircraft = Object.values(aircraft).flat();
-
-  // Search filter
-  const searchQuery = req.query.q;
-  if (searchQuery) {
-    const query = searchQuery.toLowerCase();
-    allAircraft = allAircraft.filter(a => 
-      a.name?.toLowerCase().includes(query) ||
-      a.aircraftid?.toLowerCase().includes(query) ||
-      a.nation?.toLowerCase().includes(query)
-    );
-  }
-
-  // Pagination
-  const page = Math.max(1, parseInt(req.query.page) || 1);
-  const limit = Math.min(100, Math.max(1, parseInt(req.query.limit) || 50));
-  const startIndex = (page - 1) * limit;
-  const endIndex = startIndex + limit;
-
-  const paginatedAircraft = allAircraft.slice(startIndex, endIndex);
-
-  res.json({
-    total: allAircraft.length,
-    page,
-    limit,
-    totalPages: Math.ceil(allAircraft.length / limit),
-    aircraft: paginatedAircraft,
-  });
-});
-
-// GET aircraft by nation
-app.get("/api/vehicles/aviation/aircraft/:nation", (req, res) => {
-  const { nation } = req.params;
-  const { aircraft } = dataCache.vehicles;
-
-  if (!aircraft)
-    return res.status(500).json({ 
-      error: { message: "Aircraft data not loaded", details: null }
-    });
-
-  const nationAircraft = aircraft[nation];
-  if (!nationAircraft)
-    return res.status(404).json({
-      error: { 
-        message: `No aircraft found for nation: ${nation}`,
-        details: { available_nations: Object.keys(aircraft) }
-      }
-    });
-
-  res.json({ nation, count: nationAircraft.length, aircraft: nationAircraft });
-});
-
-// GET specific aircraft
-app.get("/api/vehicles/aviation/aircraft/:nation/:identifier", (req, res) => {
-  const { nation, identifier } = req.params;
-  const nationAircraft = dataCache.vehicles.aircraft?.[nation];
-
-  if (!nationAircraft)
-    return res.status(404).json({ 
-      error: { message: `Nation not found: ${nation}`, details: null }
-    });
-
-  const isNumeric = !isNaN(identifier);
-  const searchId = isNumeric ? parseInt(identifier) : identifier;
-
-  const aircraft = nationAircraft.find(
-    (a) => a.aircraftid === identifier || a.id === searchId
-  ) || null;
-
-  if (!aircraft)
-    return res.status(404).json({
-      error: { 
-        message: `Aircraft not found with identifier: ${identifier}`,
-        details: "Use either aircraftid (e.g., 'p-26a-34m2') or numeric id (e.g., '1')"
-      }
-    });
-
-  res.json(aircraft);
-});
-
-// POST - Create new aircraft
-app.post("/api/vehicles/aviation/aircraft/:nation", async (req, res) => {
-  const { nation } = req.params;
-  const { aircraft } = dataCache.vehicles;
-
-  if (!aircraft)
-    return res.status(500).json({ 
-      error: { message: "Aircraft data not loaded", details: null }
-    });
-
-  if (!aircraft[nation]) {
-    aircraft[nation] = [];
-  }
-
-  // Validate required fields - THIS IS THE IMPORTANT PART
-  const { aircraftid, name } = req.body;
-  
-  if (!aircraftid || !name) {
-    return res.status(400).json({
-      error: { 
-        message: "Missing required fields",
-        details: "Both 'aircraftid' and 'name' are required"
-      }
-    });
-  }
-
-  // Trim values to check for empty strings
-  if (aircraftid.trim() === '' || name.trim() === '') {
-    return res.status(400).json({
-      error: { 
-        message: "Missing required fields",
-        details: "Both 'aircraftid' and 'name' must be non-empty"
-      }
-    });
-  }
-
-  // Check for duplicate aircraftid
-  const exists = aircraft[nation].find(a => a.aircraftid === aircraftid);
-  if (exists) {
-    return res.status(409).json({
-      error: { 
-        message: "Aircraft already exists",
-        details: `An aircraft with aircraftid '${aircraftid}' already exists in ${nation}`
-      }
-    });
-  }
-
-  // Create new aircraft
-  const newAircraft = {
-    id: getNextAircraftId(nation),
-    aircraftid,
-    name,
-    nation,
-    ...req.body
-  };
-
-  aircraft[nation].push(newAircraft);
-  
-  // Save to file
-  const saved = await saveJSON("data/vehicles/aviation/aircraft.json", aircraft);
-  
-  if (!saved) {
-    return res.status(500).json({
-      error: { message: "Failed to save aircraft", details: null }
-    });
-  }
-
-  console.log(`✅ Created aircraft: ${aircraftid} in ${nation}`);
-  res.status(201).json(newAircraft);
-});
-
-// PATCH - Update aircraft
-app.patch("/api/vehicles/aviation/aircraft/:nation/:identifier", async (req, res) => {
-  const { nation, identifier } = req.params;
-  const { aircraft } = dataCache.vehicles;
-
-  if (!aircraft || !aircraft[nation])
-    return res.status(404).json({ 
-      error: { message: `Nation not found: ${nation}`, details: null }
-    });
-
-  // Validate update data
-  const validationErrors = validateAircraftData(req.body, true);
-  if (validationErrors.length > 0) {
-    return res.status(400).json({
-      error: { 
-        message: "Validation failed",
-        details: validationErrors
-      }
-    });
-  }
-
-  const isNumeric = !isNaN(identifier);
-  const searchId = isNumeric ? parseInt(identifier) : identifier;
-
-  const aircraftIndex = aircraft[nation].findIndex(
-    (a) => a.aircraftid === identifier || a.id === searchId
-  );
-
-  if (aircraftIndex === -1)
-    return res.status(404).json({
-      error: { 
-        message: `Aircraft not found with identifier: ${identifier}`,
-        details: null
-      }
-    });
-
-  // Store original for rollback
-  const originalAircraft = { ...aircraft[nation][aircraftIndex] };
-
-  // Update aircraft (partial update)
-  const updatedAircraft = {
-    ...aircraft[nation][aircraftIndex],
-    ...req.body,
-    id: aircraft[nation][aircraftIndex].id, // Preserve ID
-    nation: aircraft[nation][aircraftIndex].nation, // Preserve nation
-    aircraftid: aircraft[nation][aircraftIndex].aircraftid // Preserve aircraftid
-  };
-
-  aircraft[nation][aircraftIndex] = updatedAircraft;
-
-  // Save to file
-  const saved = await saveJSON("data/vehicles/aviation/aircraft.json", aircraft);
-  
-  if (!saved) {
-    // Rollback
-    aircraft[nation][aircraftIndex] = originalAircraft;
-    return res.status(500).json({
-      error: { message: "Failed to update aircraft", details: null }
-    });
-  }
-
-  console.log(`✅ Updated aircraft: ${identifier} in ${nation}`);
-  res.json(updatedAircraft);
-});
-
-// DELETE - Remove aircraft
-app.delete("/api/vehicles/aviation/aircraft/:nation/:identifier", async (req, res) => {
-  const { nation, identifier } = req.params;
-  const { aircraft } = dataCache.vehicles;
-
-  if (!aircraft || !aircraft[nation])
-    return res.status(404).json({ 
-      error: { message: `Nation not found: ${nation}`, details: null }
-    });
-
-  const isNumeric = !isNaN(identifier);
-  const searchId = isNumeric ? parseInt(identifier) : identifier;
-
-  const aircraftIndex = aircraft[nation].findIndex(
-    (a) => a.aircraftid === identifier || a.id === searchId
-  );
-
-  if (aircraftIndex === -1)
-    return res.status(404).json({
-      error: { 
-        message: `Aircraft not found with identifier: ${identifier}`,
-        details: null
-      }
-    });
-
-  // Remove aircraft
-  const deletedAircraft = aircraft[nation].splice(aircraftIndex, 1)[0];
-
-  // Save to file
-  const saved = await saveJSON("data/vehicles/aviation/aircraft.json", aircraft);
-  
-  if (!saved) {
-    // Rollback
-    aircraft[nation].splice(aircraftIndex, 0, deletedAircraft);
-    return res.status(500).json({
-      error: { message: "Failed to delete aircraft", details: null }
-    });
-  }
-
-  console.log(`✅ Deleted aircraft: ${identifier} from ${nation}`);
-  res.status(204).send();
-});
+mountCRUDForCategory("aircraft", { group: "aviation" });
+mountCRUDForCategory("helicopters", { group: "aviation" });
+mountCRUDForCategory("tanks", { group: "ground" });
+mountCRUDForCategory("bluewater", { group: "naval" });
+mountCRUDForCategory("coastal", { group: "naval" });
 
 /* ============================================
- *  REMAINING READ-ONLY ROUTES
+ *  OVERVIEW / README-LIKE ENDPOINTS
  * ============================================ */
 
-// Aviation overview
+// Aviation overview - combined aircraft + helicopters
 app.get("/api/vehicles/aviation", (req, res) => {
   const { aircraft = {}, helicopters = {} } = dataCache.vehicles;
 
@@ -475,32 +447,51 @@ app.get("/api/vehicles/aviation", (req, res) => {
   });
 });
 
-// Helicopters
-app.get("/api/vehicles/aviation/helicopters", (req, res) => {
-  const { helicopters = {} } = dataCache.vehicles;
-  const allHelicopters = Object.values(helicopters).flat();
-  res.json({ total: allHelicopters.length, helicopters: allHelicopters });
+// Naval overview - combined bluewater + coastal
+app.get("/api/vehicles/naval", (req, res) => {
+  const { bluewater = {}, coastal = {} } = dataCache.vehicles;
+
+  const allBluewater = Object.values(bluewater).flat().map(s => ({ ...s, type: "bluewater" }));
+  const allCoastal = Object.values(coastal).flat().map(s => ({ ...s, type: "coastal" }));
+
+  res.json({
+    total: allBluewater.length + allCoastal.length,
+    bluewater_count: allBluewater.length,
+    coastal_count: allCoastal.length,
+    ships: [...allBluewater, ...allCoastal]
+  });
 });
 
-app.get("/api/vehicles/aviation/helicopters/:nation", (req, res) => {
-  const { nation } = req.params;
-  const { helicopters } = dataCache.vehicles;
+// Ground overview - tanks
+app.get("/api/vehicles/ground", (req, res) => {
+  const { tanks = {} } = dataCache.vehicles;
+  const allTanks = Object.values(tanks).flat();
+  res.json({ total: allTanks.length, tanks: allTanks });
+});
 
-  if (!helicopters)
-    return res.status(500).json({ 
-      error: { message: "Helicopters data not loaded", details: null }
-    });
+// All vehicles overview
+app.get("/api/vehicles", (req, res) => {
+  const { aircraft = {}, helicopters = {}, tanks = {}, bluewater = {}, coastal = {} } = dataCache.vehicles;
 
-  const nationHelicopters = helicopters[nation];
-  if (!nationHelicopters)
-    return res.status(404).json({
-      error: { 
-        message: `No helicopters found for nation: ${nation}`,
-        details: { available_nations: Object.keys(helicopters) }
-      }
-    });
+  const allAircraft = Object.values(aircraft).flat();
+  const allHelicopters = Object.values(helicopters).flat();
+  const allTanks = Object.values(tanks).flat();
+  const allBluewater = Object.values(bluewater).flat();
+  const allCoastal = Object.values(coastal).flat();
 
-  res.json({ nation, count: nationHelicopters.length, helicopters: nationHelicopters });
+  res.json({
+    total: allAircraft.length + allHelicopters.length + allTanks.length + allBluewater.length + allCoastal.length,
+    aviation: allAircraft.length + allHelicopters.length,
+    ground: allTanks.length,
+    naval: allBluewater.length + allCoastal.length,
+    data: {
+      aircraft: allAircraft,
+      helicopters: allHelicopters,
+      tanks: allTanks,
+      bluewater: allBluewater,
+      coastal: allCoastal
+    }
+  });
 });
 
 /* ============================================
@@ -542,9 +533,5 @@ app.listen(PORT, () => {
 
 URLs:
   → http://localhost:${PORT}
-  → http://localhost:${PORT}/api
-
-📚 Documentation: See README.md
-🧪 Testing: Import postman_collection.json
 `);
 });

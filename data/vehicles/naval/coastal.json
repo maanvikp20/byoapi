@@ -1,0 +1,213 @@
+{
+  "usa":[
+    {
+      "id": 1,
+      "helicopterid": "pt-6",
+      "name": "PT-6",
+      "nation": "USA",
+      "type": "Boat",
+      "tier": 1,
+      "ratings": {
+        "ab_rating": 1.0,
+        "rb_rating": 1.0
+      },
+      "manufacturer": "Higgins",
+      "update": "Update 1.77 'Advancing Storm'",
+      "specification": {
+        "armour": {
+          "hull": 40,
+          "superstructure": 15
+        },
+        "number_of_sections": 3,
+        "displacement": 48,
+        "crew": 17,
+        "max_speed": {
+          "forward": 67,
+          "backward": 25
+        }
+      },
+      "armament": {
+        "primary_armament": {
+          "12.7_mm_an-m2_browning_machine_gun": {
+            "ammunition": 4000,
+            "belt_capacity": 200,
+            "ammo_types": {
+              "universal": {
+                "type": "API-T, API, I, AP",
+                "penetration": {
+                  "10m": 29,
+                  "100m": 27,
+                  "500m": 20,
+                  "1000m": 13,
+                  "1500m": 9,
+                  "2000m": 6
+                }
+              },
+              ".50_ap": {
+                "type": "API-T, AP, AP, AP",
+                "penetration": {
+                  "10m": 29,
+                  "100m": 27,
+                  "500m": 20,
+                  "1000m": 13,
+                  "1500m": 9,
+                  "2000m": 6
+                }
+              },
+              ".50_api-t": {
+                "type": "API-T, API-T, API-T, I",
+                "penetration": {
+                  "10m": 28,
+                  "100m": 26,
+                  "500m": 20,
+                  "1000m": 15,
+                  "1500m": 13,
+                  "2000m": 11
+                }
+              }
+            }
+          }
+        },
+        "additional_armament": {
+          "533_mm_mk.8-3_c/d_torpedo": {
+            "projectile_mass": 1373,
+            "explosive_type": "TNT",
+            "explosive_mass": 174.2
+          },
+          "mk.6_depth_charge": {
+            "projectile_mass": 196,
+            "explosive_type": "TNT",
+            "explosive_mass": 136
+          }
+        }
+      },
+      "economy": {
+        "repair_cost": {
+          "ab": 0,
+          "rb": 0
+        },
+        "crew_training": {
+          "cost": 0,
+          "expert": "1000 SL",
+          "ace": "10 GE",
+          "research_aces": "80000 RP"
+        },
+        "reward_multiplier": {
+          "SL": {
+            "ab": 0.1,
+            "rb": 0.1
+          },
+          "RP": {
+            "rp": 1
+          },
+          "total_cost_of_modifications": {
+            "RP": 3620,
+            "SL": 167
+          },
+          "talisman_cost": {
+            "GE": 190
+          }
+        }
+      },
+      "modifications": {
+        "seakeeping": {
+          "dry-docking": {
+            "research": "440 RP",
+            "cost": {
+              "SL": 19,
+              "GE": 55
+            }
+          },
+          "rudder_replacement": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          },
+          "propeller_replacement": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          },
+          "engine_maintenance": {
+            "research": "720 RP",
+            "cost": {
+              "SL": 35,
+              "GE": 70
+            }
+          }
+        },
+        "unsinkability": {
+          "damage_control_division": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          },
+          "fire_division": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          },
+          "smokescreen": {
+            "research": "380 RP",
+            "cost": {
+              "SL": 17,
+              "GE": 35
+            }
+          },
+          "new_pumps": {
+            "research": "0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          }
+        },
+        "firepower": {
+          ".50_ap": {
+            "research": "440 RP",
+            "cost": {
+              "SL": 19,
+              "GE": 45
+            }
+          },
+          ".50_api-t": {
+            "research":"380 RP",
+            "cost": {
+              "SL": 17,
+              "GE": 35
+            }
+          },
+          "primary_armament_targeting": {
+            "research":"0 RP",
+            "cost": {
+              "SL": 0,
+              "GE": 0
+            }
+          },
+          "depth_charges": {
+            "research":"540 RP",
+            "cost": {
+              "SL": 25,
+              "GE": 55
+            }
+          },
+          "artillery_support": {
+            "research":"720 RP",
+            "cost": {
+              "SL": 35,
+              "GE": 70
+            }
+          }
+        }
+      }
+    }
+  ]
+}
