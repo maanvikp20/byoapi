@@ -8,9 +8,9 @@
       "type": "fighter",
       "tier": 1,
       "ratings": {
-        "ab_rating": 1.0,
-        "rb_rating": 1.0,
-        "sb_rating": 1.0
+        "ab_rating": 1,
+        "rb_rating": 1,
+        "sb_rating": 1
       },
       "manufacturer": "Boeing",
       "update": "Aircraft CBT'",
@@ -194,7 +194,7 @@
             "sb": 0.1
           },
           "RP": {
-            "rp": 1.0
+            "rp": 1
           },
           "total_cost_of_modifications": {
             "RP": 3620,
@@ -435,7 +435,7 @@
             "sb": 0.6
           },
           "RP": {
-            "rp": 1.0
+            "rp": 1
           },
           "total_cost_of_modifications": {
             "RP": 2970,
@@ -712,7 +712,7 @@
             "sb": 0.6
           },
           "RP": {
-            "rp": 1.0
+            "rp": 1
           },
           "total_cost_of_modifications": {
             "RP": 2970,
@@ -812,9 +812,9 @@
       "type": "fighter",
       "tier": 1,
       "ratings": {
-        "ab_rating": 1.0,
-        "rb_rating": 1.0,
-        "sb_rating": 1.0
+        "ab_rating": 1,
+        "rb_rating": 1,
+        "sb_rating": 1
       },
       "manufacturer": "Hawker",
       "update": "Aircraft CBT'",
@@ -927,7 +927,7 @@
             "sb": 0.5
           },
           "RP": {
-            "rp": 1.0
+            "rp": 1
           },
           "total_cost_of_modifications": {
             "RP": 2690,
